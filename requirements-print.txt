@@ -1,0 +1,3 @@
+# Optional browser/PDF verification; not required to use the planner.
+playwright==1.63.0
+pypdf==6.19.0

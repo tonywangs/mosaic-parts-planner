@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mosaic-parts-planner"
+version = "0.1.0"
+description = "Offline, inventory-constrained 1x1 tile mosaic plans"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["Pillow==12.1.1"]
+
+[project.scripts]
+mosaic-parts = "mosaic_parts.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

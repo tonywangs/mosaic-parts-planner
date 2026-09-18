@@ -1,0 +1,372 @@
+{
+  "schema_version": 1,
+  "seed": 9771,
+  "generator": "0.1.0",
+  "pillow": "12.1.1",
+  "objective": "sum of squared distances in 8-bit encoded RGB",
+  "fit": "contain",
+  "background": [
+    255,
+    255,
+    255
+  ],
+  "cases": [
+    {
+      "case": "landscape_scarce_teal",
+      "width": 24,
+      "height": 16,
+      "input_sha256": "e0c41dd28fcc51a0423f0b5f618eab00790d2b86e5bf461cef02696be735d57f",
+      "inventory": {
+        "colors": [
+          {
+            "name": "Illustrative sky",
+            "rgb": [
+              110,
+              175,
+              220
+            ],
+            "available": 220
+          },
+          {
+            "name": "Illustrative dark teal",
+            "rgb": [
+              55,
+              85,
+              80
+            ],
+            "available": 70
+          },
+          {
+            "name": "Illustrative sand",
+            "rgb": [
+              225,
+              200,
+              145
+            ],
+            "available": 100
+          },
+          {
+            "name": "Illustrative gold",
+            "rgb": [
+              248,
+              208,
+              80
+            ],
+            "available": 35
+          }
+        ]
+      },
+      "grid_sha256": "b98a128feb418f5c27f51aed470a95619971171c867703b29140371caf9d36e2",
+      "constrained": {
+        "total_squared_rgb_error": 3055128,
+        "mean_squared_rgb_error_per_channel": 2652.0208333333335,
+        "counts": [
+          220,
+          70,
+          73,
+          21
+        ],
+        "excess_by_color": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "excess_tiles": 0,
+        "colors_over_inventory": 0
+      },
+      "nearest_unconstrained": {
+        "total_squared_rgb_error": 76768,
+        "mean_squared_rgb_error_per_channel": 66.63888888888889,
+        "counts": [
+          226,
+          137,
+          0,
+          21
+        ],
+        "excess_by_color": [
+          6,
+          67,
+          0,
+          0
+        ],
+        "excess_tiles": 73,
+        "colors_over_inventory": 2
+      },
+      "independent_check": {
+        "cells": 384,
+        "sections": 6,
+        "inventory_excess": 0,
+        "html_reconstruction": "matches placements, preview, parts, and comparison"
+      }
+    },
+    {
+      "case": "noise_balanced",
+      "width": 16,
+      "height": 16,
+      "input_sha256": "9f3d32fb4ba46544490ae451afbcf40125bb5a74449621f8c40d450967c5d8c1",
+      "inventory": {
+        "colors": [
+          {
+            "name": "Illustrative 1",
+            "rgb": [
+              220,
+              45,
+              40
+            ],
+            "available": 64
+          },
+          {
+            "name": "Illustrative 2",
+            "rgb": [
+              40,
+              170,
+              90
+            ],
+            "available": 64
+          },
+          {
+            "name": "Illustrative 3",
+            "rgb": [
+              55,
+              80,
+              200
+            ],
+            "available": 64
+          },
+          {
+            "name": "Illustrative 4",
+            "rgb": [
+              230,
+              215,
+              170
+            ],
+            "available": 64
+          }
+        ]
+      },
+      "grid_sha256": "6f73bb56bc4112e27238dbab5e8889f0b41e829b02af6a6a1997d7503d823702",
+      "constrained": {
+        "total_squared_rgb_error": 2565479,
+        "mean_squared_rgb_error_per_channel": 3340.4674479166665,
+        "counts": [
+          64,
+          64,
+          64,
+          64
+        ],
+        "excess_by_color": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "excess_tiles": 0,
+        "colors_over_inventory": 0
+      },
+      "nearest_unconstrained": {
+        "total_squared_rgb_error": 2551984,
+        "mean_squared_rgb_error_per_channel": 3322.8958333333335,
+        "counts": [
+          57,
+          71,
+          63,
+          65
+        ],
+        "excess_by_color": [
+          0,
+          7,
+          0,
+          1
+        ],
+        "excess_tiles": 8,
+        "colors_over_inventory": 2
+      },
+      "independent_check": {
+        "cells": 256,
+        "sections": 4,
+        "inventory_excess": 0,
+        "html_reconstruction": "matches placements, preview, parts, and comparison"
+      }
+    },
+    {
+      "case": "noise_scarce_red",
+      "width": 16,
+      "height": 16,
+      "input_sha256": "9f3d32fb4ba46544490ae451afbcf40125bb5a74449621f8c40d450967c5d8c1",
+      "inventory": {
+        "colors": [
+          {
+            "name": "Illustrative 1",
+            "rgb": [
+              220,
+              45,
+              40
+            ],
+            "available": 8
+          },
+          {
+            "name": "Illustrative 2",
+            "rgb": [
+              40,
+              170,
+              90
+            ],
+            "available": 84
+          },
+          {
+            "name": "Illustrative 3",
+            "rgb": [
+              55,
+              80,
+              200
+            ],
+            "available": 84
+          },
+          {
+            "name": "Illustrative 4",
+            "rgb": [
+              230,
+              215,
+              170
+            ],
+            "available": 84
+          }
+        ]
+      },
+      "grid_sha256": "f9b0983d31ff9a5dc3e605ea22d8943580c0d1b9fbd0627270bc8a8488c4ad56",
+      "constrained": {
+        "total_squared_rgb_error": 3152699,
+        "mean_squared_rgb_error_per_channel": 4105.076822916667,
+        "counts": [
+          8,
+          84,
+          80,
+          84
+        ],
+        "excess_by_color": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "excess_tiles": 0,
+        "colors_over_inventory": 0
+      },
+      "nearest_unconstrained": {
+        "total_squared_rgb_error": 2551984,
+        "mean_squared_rgb_error_per_channel": 3322.8958333333335,
+        "counts": [
+          57,
+          71,
+          63,
+          65
+        ],
+        "excess_by_color": [
+          49,
+          0,
+          0,
+          0
+        ],
+        "excess_tiles": 49,
+        "colors_over_inventory": 1
+      },
+      "independent_check": {
+        "cells": 256,
+        "sections": 4,
+        "inventory_excess": 0,
+        "html_reconstruction": "matches placements, preview, parts, and comparison"
+      }
+    },
+    {
+      "case": "noise_unlimited",
+      "width": 16,
+      "height": 16,
+      "input_sha256": "9f3d32fb4ba46544490ae451afbcf40125bb5a74449621f8c40d450967c5d8c1",
+      "inventory": {
+        "colors": [
+          {
+            "name": "Illustrative 1",
+            "rgb": [
+              220,
+              45,
+              40
+            ],
+            "available": 256
+          },
+          {
+            "name": "Illustrative 2",
+            "rgb": [
+              40,
+              170,
+              90
+            ],
+            "available": 256
+          },
+          {
+            "name": "Illustrative 3",
+            "rgb": [
+              55,
+              80,
+              200
+            ],
+            "available": 256
+          },
+          {
+            "name": "Illustrative 4",
+            "rgb": [
+              230,
+              215,
+              170
+            ],
+            "available": 256
+          }
+        ]
+      },
+      "grid_sha256": "ce15808243b930ca4927f743870e6ad56e0bd419ca2b83f813e310b7fc9533cc",
+      "constrained": {
+        "total_squared_rgb_error": 2551984,
+        "mean_squared_rgb_error_per_channel": 3322.8958333333335,
+        "counts": [
+          57,
+          71,
+          63,
+          65
+        ],
+        "excess_by_color": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "excess_tiles": 0,
+        "colors_over_inventory": 0
+      },
+      "nearest_unconstrained": {
+        "total_squared_rgb_error": 2551984,
+        "mean_squared_rgb_error_per_channel": 3322.8958333333335,
+        "counts": [
+          57,
+          71,
+          63,
+          65
+        ],
+        "excess_by_color": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "excess_tiles": 0,
+        "colors_over_inventory": 0
+      },
+      "independent_check": {
+        "cells": 256,
+        "sections": 4,
+        "inventory_excess": 0,
+        "html_reconstruction": "matches placements, preview, parts, and comparison"
+      }
+    }
+  ],
+  "interpretation": "Inventory feasibility can increase RGB error. This is not a perceptual or physical-color evaluation."
+}

@@ -1,0 +1,40 @@
+{
+  "colors": [
+    {
+      "name": "Illustrative sky",
+      "rgb": [
+        110,
+        175,
+        220
+      ],
+      "available": 220
+    },
+    {
+      "name": "Illustrative dark teal",
+      "rgb": [
+        55,
+        85,
+        80
+      ],
+      "available": 70
+    },
+    {
+      "name": "Illustrative sand",
+      "rgb": [
+        225,
+        200,
+        145
+      ],
+      "available": 100
+    },
+    {
+      "name": "Illustrative gold",
+      "rgb": [
+        248,
+        208,
+        80
+      ],
+      "available": 35
+    }
+  ]
+}
