@@ -41,7 +41,7 @@ def main():
         env.update(PIP_NO_INDEX="1", PIP_DISABLE_PIP_VERSION_CHECK="1", PYTHONNOUSERSITE="1",
                    PIP_CONFIG_FILE=os.devnull)
         run([sys.executable, "-m", "pip", "--python", binary, "install", "--no-index",
-             "--find-links", wheelhouse, "--only-binary=:all:", "mosaic-parts-planner==0.1.0"], work, env)
+             "--find-links", wheelhouse, "--only-binary=:all:", "mosaic-parts-planner==0.2.0"], work, env)
         run([binary, "-I", "-c", "import mosaic_parts, sys; from pathlib import Path; "
              "assert Path(mosaic_parts.__file__).is_relative_to(sys.prefix); print(mosaic_parts.__file__)"], work, env)
         # Disable socket creation for installed example/conversion processes.
@@ -59,6 +59,18 @@ def main():
             run([cli, "convert", work / "input/source.png", "--inventory", work / "input/inventory.json",
                  "--width", "24", "--height", "16", "--output", work / name], work, env)
             run([binary, ROOT / "scripts/check_bundle.py", work / name, work / "input/inventory.json"], work, env)
+        # The documented fixed-color image -> grid -> rectangle example.
+        run([cli, "convert", ROOT / "examples/source.png", "--inventory", ROOT / "examples/inventory.json",
+             "--width", "6", "--height", "4", "--output", work / "small-grid"], work, env)
+        for name in ("packed-first", "packed-second"):
+            run([cli, "pack", work / "small-grid/placements.json", "--inventory", ROOT / "examples/pieces.json",
+                 "--output", work / name, "--section-size", "3"], work, env)
+            run([binary, ROOT / "scripts/check_packing.py", work / name, work / "small-grid/placements.json",
+                 ROOT / "examples/pieces.json"], work, env)
+        packed_hashes = {}
+        for path in sorted((work / "packed-first").iterdir()):
+            assert path.read_bytes() == (work / "packed-second" / path.name).read_bytes(), path.name
+            packed_hashes[path.name] = hashlib.sha256(path.read_bytes()).hexdigest()
         hashes = {}
         for path in sorted((work / "first").iterdir()):
             assert path.read_bytes() == (work / "second" / path.name).read_bytes(), path.name
@@ -66,7 +78,7 @@ def main():
         run([binary, "-m", "unittest", "discover", "-s", ROOT / "tests", "-v"], work, env)
         run([binary, ROOT / "scripts/compare.py", "--check", ROOT / "experiments/results.json"], work, env)
         print(json.dumps({"isolated_install": "passed", "offline_example": "passed",
-                          "all_artifacts_identical": True, "sha256": hashes}, indent=2))
+                          "all_artifacts_identical": True, "sha256": hashes, "packed_sha256": packed_hashes}, indent=2))
 
 
 if __name__ == "__main__":

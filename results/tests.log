@@ -1,0 +1,41 @@
+test_checker_detects_visible_cell_and_total_tampering (test_bundle.BundleTests.test_checker_detects_visible_cell_and_total_tampering) ... ok
+test_cli_invalid_inputs_actionable_without_traceback (test_bundle.BundleTests.test_cli_invalid_inputs_actionable_without_traceback) ... ok
+test_cli_reproducible_across_hash_seeds (test_bundle.BundleTests.test_cli_reproducible_across_hash_seeds) ... ok
+test_escaped_names_and_spreadsheet_formulas (test_bundle.BundleTests.test_escaped_names_and_spreadsheet_formulas) ... ok
+test_existing_output_and_atomic_failure (test_bundle.BundleTests.test_existing_output_and_atomic_failure) ... ok
+test_full_example_independent_reconstruction_and_reproducibility (test_bundle.BundleTests.test_full_example_independent_reconstruction_and_reproducibility) ... ok
+test_partial_sections_and_all_zero_stock_colors (test_bundle.BundleTests.test_partial_sections_and_all_zero_stock_colors) ... ok
+test_single_cell_and_long_skinny_grids (test_bundle.BundleTests.test_single_cell_and_long_skinny_grids) ... ok
+test_all_exif_orientations (test_inputs.InputTests.test_all_exif_orientations) ... ok
+test_extreme_contain_aspect (test_inputs.InputTests.test_extreme_contain_aspect) ... ok
+test_fit_modes (test_inputs.InputTests.test_fit_modes) ... ok
+test_grid_limits (test_inputs.InputTests.test_grid_limits) ... ok
+test_image_resource_limits (test_inputs.InputTests.test_image_resource_limits) ... ok
+test_invalid_inventory (test_inputs.InputTests.test_invalid_inventory) ... ok
+test_invalid_json_duplicate_keys_and_size (test_inputs.InputTests.test_invalid_json_duplicate_keys_and_size) ... ok
+test_jpeg_and_ignored_icc (test_inputs.InputTests.test_jpeg_and_ignored_icc) ... ok
+test_palette_transparency_and_grayscale (test_inputs.InputTests.test_palette_transparency_and_grayscale) ... ok
+test_reject_formats_animation_modes_and_corruption (test_inputs.InputTests.test_reject_formats_animation_modes_and_corruption) ... ok
+test_transparency_composited_before_resize (test_inputs.InputTests.test_transparency_composited_before_resize) ... ok
+test_valid_inventory (test_inputs.InputTests.test_valid_inventory) ... ok
+test_308_cases_against_independent_exhaustive_oracle (test_packing.PackingTests.test_308_cases_against_independent_exhaustive_oracle) ... ok
+test_atomic_failure_invalid_solver_and_no_solution_artifacts (test_packing.PackingTests.test_atomic_failure_invalid_solver_and_no_solution_artifacts) ... ok
+test_backtracking_finds_and_retains_incumbent_after_greedy_failure (test_packing.PackingTests.test_backtracking_finds_and_retains_incumbent_after_greedy_failure) ... ok
+test_cli_status_codes_and_repeatable_artifacts (test_packing.PackingTests.test_cli_status_codes_and_repeatable_artifacts) ... ok
+test_clock_deadline_in_preprocessing_and_after_greedy (test_packing.PackingTests.test_clock_deadline_in_preprocessing_and_after_greedy) ... ok
+test_complete_bundle_crossings_and_tampering (test_packing.PackingTests.test_complete_bundle_crossings_and_tampering) ... ok
+test_limits_with_and_without_incumbents (test_packing.PackingTests.test_limits_with_and_without_incumbents) ... ok
+test_malformed_grid_inventory_and_limits (test_packing.PackingTests.test_malformed_grid_inventory_and_limits) ... ok
+test_max_cells_skinny_and_escaped_color_name (test_packing.PackingTests.test_max_cells_skinny_and_escaped_color_name) ... ok
+test_rotation_is_shared_inventory_and_explicit (test_packing.PackingTests.test_rotation_is_shared_inventory_and_explicit) ... ok
+test_validator_rejects_corruption (test_packing.PackingTests.test_validator_rejects_corruption) ... ok
+test_duplicate_rgb_names_and_zero_capacity (test_solver.SolverTests.test_duplicate_rgb_names_and_zero_capacity) ... ok
+test_exhaustive_binary_colors_all_small_inputs (test_solver.SolverTests.test_exhaustive_binary_colors_all_small_inputs) ... ok
+test_insufficient (test_solver.SolverTests.test_insufficient) ... ok
+test_reassignment_beats_greedy (test_solver.SolverTests.test_reassignment_beats_greedy) ... ok
+test_seeded_three_color_cases (test_solver.SolverTests.test_seeded_three_color_cases) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 11.854s
+
+OK

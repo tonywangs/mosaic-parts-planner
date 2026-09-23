@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "chromium": "153.0.8010.12",
+  "results": [
+    {
+      "case": "image_example",
+      "paper": "A4",
+      "pages": 10,
+      "instruction_sheets": 8,
+      "all_sheets_intact": true,
+      "browser_errors": 0,
+      "external_requests": 0,
+      "independent_check": {
+        "cells": 24,
+        "pieces": 10,
+        "sections": 4,
+        "crossing_pieces": 3,
+        "reconstruction": "JSON, visible HTML, CSV, preview, original grid and inventory agree"
+      }
+    },
+    {
+      "case": "image_example",
+      "paper": "Letter",
+      "pages": 10,
+      "instruction_sheets": 8,
+      "all_sheets_intact": true,
+      "browser_errors": 0,
+      "external_requests": 0,
+      "independent_check": {
+        "cells": 24,
+        "pieces": 10,
+        "sections": 4,
+        "crossing_pieces": 3,
+        "reconstruction": "JSON, visible HTML, CSV, preview, original grid and inventory agree"
+      }
+    },
+    {
+      "case": "cross_four_sections",
+      "paper": "A4",
+      "pages": 6,
+      "instruction_sheets": 5,
+      "all_sheets_intact": true,
+      "browser_errors": 0,
+      "external_requests": 0,
+      "independent_check": {
+        "cells": 16,
+        "pieces": 4,
+        "sections": 4,
+        "crossing_pieces": 3,
+        "reconstruction": "JSON, visible HTML, CSV, preview, original grid and inventory agree"
+      }
+    },
+    {
+      "case": "cross_four_sections",
+      "paper": "Letter",
+      "pages": 6,
+      "instruction_sheets": 5,
+      "all_sheets_intact": true,
+      "browser_errors": 0,
+      "external_requests": 0,
+      "independent_check": {
+        "cells": 16,
+        "pieces": 4,
+        "sections": 4,
+        "crossing_pieces": 3,
+        "reconstruction": "JSON, visible HTML, CSV, preview, original grid and inventory agree"
+      }
+    },
+    {
+      "case": "dense_256_cells",
+      "paper": "A4",
+      "pages": 20,
+      "instruction_sheets": 16,
+      "all_sheets_intact": true,
+      "browser_errors": 0,
+      "external_requests": 0,
+      "independent_check": {
+        "cells": 256,
+        "pieces": 256,
+        "sections": 4,
+        "crossing_pieces": 0,
+        "reconstruction": "JSON, visible HTML, CSV, preview, original grid and inventory agree"
+      }
+    },
+    {
+      "case": "dense_256_cells",
+      "paper": "Letter",
+      "pages": 21,
+      "instruction_sheets": 16,
+      "all_sheets_intact": true,
+      "browser_errors": 0,
+      "external_requests": 0,
+      "independent_check": {
+        "cells": 256,
+        "pieces": 256,
+        "sections": 4,
+        "crossing_pieces": 0,
+        "reconstruction": "JSON, visible HTML, CSV, preview, original grid and inventory agree"
+      }
+    }
+  ],
+  "limitation": "Browser rendering/PDF checks; no physical printing or human assembly study."
+}

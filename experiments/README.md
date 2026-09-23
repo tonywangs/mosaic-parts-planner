@@ -1,5 +1,7 @@
 # Inventory feasibility versus RGB error
 
+Rectangular packing has separate [oracle, CPU, print, and installation evidence](packing.md).
+
 This reproducible synthetic comparison asks how enforcing stock limits changes
 squared encoded-RGB error relative to unconstrained nearest-color matching.
 It does not evaluate physical tiles, human preferences, or perceptual similarity.

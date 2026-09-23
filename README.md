@@ -1,6 +1,6 @@
 # Mosaic Parts Planner
 
-Turn a PNG or JPEG into a flat, single-layer mosaic of 1×1 tiles using the colors and quantities you actually have. This offline Python CLI writes a preview, a placement grid, a parts list, and self-contained printable instructions. Every grid cell receives one tile; no color exceeds its inventory.
+Turn a PNG or JPEG into an inventory-constrained color grid, then optionally pack that grid with color-specific 1×1, 1×2, and 2×2 pieces. This offline Python CLI writes previews, placement JSON, parts lists, and self-contained printable instructions. Conversion respects 1×1 color counts; the separate `pack` command minimizes rectangular piece count while preserving every grid cell’s color.
 
 ![Synthetic landscape converted with a deliberately scarce dark-teal inventory](examples/preview.png)
 
@@ -28,7 +28,30 @@ python3 -m pip wheel --wheel-dir wheelhouse .
 
 This is a local package; no registry publication is required.
 
-## Try the complete example
+## Rectangular pieces (new in 0.2)
+
+[Follow the complete image → grid → rectangular-plan example](docs/packing.md).
+The documented 24-cell sample packs into **10 pieces, proven optimal**. Packing
+accepts a separate piece inventory, explicit rotation permissions, and time/node
+budgets. Every exported plan passes independent integer-coordinate validation.
+Interrupted runs report feasible incumbents or unknown feasibility accurately.
+
+```sh
+.venv/bin/mosaic-parts convert examples/source.png --inventory examples/inventory.json \
+  --width 6 --height 4 --output example-output/rectangle-grid
+.venv/bin/mosaic-parts pack example-output/rectangle-grid/placements.json \
+  --inventory examples/pieces.json --section-size 3 --output example-output/rectangles
+.venv/bin/python scripts/check_packing.py example-output/rectangles \
+  example-output/rectangle-grid/placements.json examples/pieces.json
+```
+
+Open `example-output/rectangles/instructions.html`. Pieces crossing a printed
+section remain whole and are listed exactly once by their owner section.
+Packing is limited to **256 fixed-color cells**; the original 1×1 conversion
+workflow below retains its **1,024-cell** limit. See [packing formats and limits](docs/packing.md)
+and [308 exhaustive cases, CPU comparisons, and browser evidence](experiments/packing.md).
+
+## Try the complete 1×1 example
 
 Use new output paths; existing directories are deliberately refused.
 
@@ -140,7 +163,7 @@ The verifier creates a fresh temporary venv with no system packages, installs on
 
 ## Limitations
 
-Sample colors are illustrative, not official product color data. Physical tile matching, acquisition, fit, assembly, durability, and human usability remain unverified. Inventory counts are trusted as supplied. Backing plates, frames, adhesives, spare pieces, shipping, and prices are outside the parts list. Only flat, single-layer 1×1 tile mosaics are modeled; there are no larger pieces, rotations, depth maps, or structural checks. Instructions are HTML for browser printing, not a PDF export service. RGB optimization can sacrifice recognizable image features when a color is scarce. No human perceptual study has been run.
+Sample colors are illustrative, not official product color data. Physical tile matching, acquisition, fit, assembly, durability, and human usability remain unverified. Inventory counts are trusted as supplied. Backing plates, frames, adhesives, spare pieces, shipping, and prices are outside the parts list. The conversion step models 1×1 tiles; the separate packing step supports flat 1×1, 1×2, and 2×2 pieces with explicit rotations. There are no depth maps or structural checks. Fixed-color packing does not jointly optimize the image colors. Instructions are HTML for browser printing, not a PDF export service. RGB optimization can sacrifice recognizable image features when a color is scarce. No human perceptual study has been run.
 
 Optional capacity and browser-print checks:
 

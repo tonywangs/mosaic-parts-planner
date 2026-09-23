@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "seed": 9771,
-  "generator": "0.1.0",
+  "generator": "0.2.0",
   "pillow": "12.1.1",
   "objective": "sum of squared distances in 8-bit encoded RGB",
   "fit": "contain",
