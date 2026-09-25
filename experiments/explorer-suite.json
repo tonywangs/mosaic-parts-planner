@@ -1,0 +1,2571 @@
+{
+  "schema_version": 1,
+  "seed": 260926,
+  "settings": {
+    "time_limit": 5.0,
+    "total_time_limit": 20.0,
+    "node_limit": 20000,
+    "total_node_limit": 50000,
+    "section_size": 3
+  },
+  "cases": [
+    {
+      "name": "boundary_below",
+      "problem": {
+        "schema_version": 1,
+        "width": 2,
+        "height": 1,
+        "colors": [
+          {
+            "id": 1,
+            "name": "Sample 1",
+            "rgb": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Sample 2",
+            "rgb": [
+              10,
+              10,
+              10
+            ]
+          }
+        ],
+        "pixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            10,
+            10,
+            10
+          ]
+        ],
+        "error_budget": 299
+      },
+      "inventory": {
+        "schema_version": 1,
+        "pieces": [
+          {
+            "color_id": 1,
+            "shape": "1x1",
+            "available": 2,
+            "rotate": false
+          },
+          {
+            "color_id": 1,
+            "shape": "1x2",
+            "available": 1,
+            "rotate": true
+          },
+          {
+            "color_id": 1,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x1",
+            "available": 2,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x2",
+            "available": 1,
+            "rotate": true
+          },
+          {
+            "color_id": 2,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          }
+        ]
+      },
+      "budgets": [
+        299,
+        0,
+        298,
+        599,
+        299
+      ]
+    },
+    {
+      "name": "boundary_exact",
+      "problem": {
+        "schema_version": 1,
+        "width": 2,
+        "height": 1,
+        "colors": [
+          {
+            "id": 1,
+            "name": "Sample 1",
+            "rgb": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Sample 2",
+            "rgb": [
+              10,
+              10,
+              10
+            ]
+          }
+        ],
+        "pixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            10,
+            10,
+            10
+          ]
+        ],
+        "error_budget": 300
+      },
+      "inventory": {
+        "schema_version": 1,
+        "pieces": [
+          {
+            "color_id": 1,
+            "shape": "1x1",
+            "available": 2,
+            "rotate": false
+          },
+          {
+            "color_id": 1,
+            "shape": "1x2",
+            "available": 1,
+            "rotate": true
+          },
+          {
+            "color_id": 1,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x1",
+            "available": 2,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x2",
+            "available": 1,
+            "rotate": true
+          },
+          {
+            "color_id": 2,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          }
+        ]
+      },
+      "budgets": [
+        300,
+        0,
+        299,
+        601,
+        300
+      ]
+    },
+    {
+      "name": "rotation_required",
+      "problem": {
+        "schema_version": 1,
+        "width": 2,
+        "height": 1,
+        "colors": [
+          {
+            "id": 1,
+            "name": "Sample 1",
+            "rgb": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Sample 2",
+            "rgb": [
+              10,
+              10,
+              10
+            ]
+          }
+        ],
+        "pixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            10,
+            10,
+            10
+          ]
+        ],
+        "error_budget": 300
+      },
+      "inventory": {
+        "schema_version": 1,
+        "pieces": [
+          {
+            "color_id": 1,
+            "shape": "1x1",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 1,
+            "shape": "1x2",
+            "available": 1,
+            "rotate": true
+          },
+          {
+            "color_id": 1,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x1",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x2",
+            "available": 0,
+            "rotate": true
+          },
+          {
+            "color_id": 2,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          }
+        ]
+      },
+      "budgets": [
+        300,
+        0,
+        299,
+        601,
+        300
+      ]
+    },
+    {
+      "name": "rotation_forbidden",
+      "problem": {
+        "schema_version": 1,
+        "width": 2,
+        "height": 1,
+        "colors": [
+          {
+            "id": 1,
+            "name": "Sample 1",
+            "rgb": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Sample 2",
+            "rgb": [
+              10,
+              10,
+              10
+            ]
+          }
+        ],
+        "pixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            10,
+            10,
+            10
+          ]
+        ],
+        "error_budget": 300
+      },
+      "inventory": {
+        "schema_version": 1,
+        "pieces": [
+          {
+            "color_id": 1,
+            "shape": "1x1",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 1,
+            "shape": "1x2",
+            "available": 1,
+            "rotate": false
+          },
+          {
+            "color_id": 1,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x1",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x2",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          }
+        ]
+      },
+      "budgets": [
+        300,
+        0,
+        299,
+        601,
+        300
+      ]
+    },
+    {
+      "name": "scarce_nearest_color",
+      "problem": {
+        "schema_version": 1,
+        "width": 2,
+        "height": 1,
+        "colors": [
+          {
+            "id": 1,
+            "name": "Sample 1",
+            "rgb": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Sample 2",
+            "rgb": [
+              10,
+              10,
+              10
+            ]
+          }
+        ],
+        "pixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            10,
+            10,
+            10
+          ]
+        ],
+        "error_budget": 300
+      },
+      "inventory": {
+        "schema_version": 1,
+        "pieces": [
+          {
+            "color_id": 1,
+            "shape": "1x1",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 1,
+            "shape": "1x2",
+            "available": 0,
+            "rotate": true
+          },
+          {
+            "color_id": 1,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x1",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x2",
+            "available": 1,
+            "rotate": true
+          },
+          {
+            "color_id": 2,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          }
+        ]
+      },
+      "budgets": [
+        300,
+        0,
+        299,
+        601,
+        300
+      ]
+    },
+    {
+      "name": "tied_colors_and_tilings",
+      "problem": {
+        "schema_version": 1,
+        "width": 2,
+        "height": 2,
+        "colors": [
+          {
+            "id": 1,
+            "name": "Sample 1",
+            "rgb": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Sample 2",
+            "rgb": [
+              10,
+              10,
+              10
+            ]
+          }
+        ],
+        "pixels": [
+          [
+            5,
+            5,
+            5
+          ],
+          [
+            5,
+            5,
+            5
+          ],
+          [
+            5,
+            5,
+            5
+          ],
+          [
+            5,
+            5,
+            5
+          ]
+        ],
+        "error_budget": 300
+      },
+      "inventory": {
+        "schema_version": 1,
+        "pieces": [
+          {
+            "color_id": 1,
+            "shape": "1x1",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 1,
+            "shape": "1x2",
+            "available": 2,
+            "rotate": true
+          },
+          {
+            "color_id": 1,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x1",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x2",
+            "available": 2,
+            "rotate": true
+          },
+          {
+            "color_id": 2,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          }
+        ]
+      },
+      "budgets": [
+        300,
+        0,
+        299,
+        601,
+        300
+      ]
+    },
+    {
+      "name": "geometry_impossible",
+      "problem": {
+        "schema_version": 1,
+        "width": 3,
+        "height": 1,
+        "colors": [
+          {
+            "id": 1,
+            "name": "Sample 1",
+            "rgb": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Sample 2",
+            "rgb": [
+              10,
+              10,
+              10
+            ]
+          }
+        ],
+        "pixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "error_budget": 0
+      },
+      "inventory": {
+        "schema_version": 1,
+        "pieces": [
+          {
+            "color_id": 1,
+            "shape": "1x1",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 1,
+            "shape": "1x2",
+            "available": 0,
+            "rotate": true
+          },
+          {
+            "color_id": 1,
+            "shape": "2x2",
+            "available": 1,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x1",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x2",
+            "available": 0,
+            "rotate": true
+          },
+          {
+            "color_id": 2,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          }
+        ]
+      },
+      "budgets": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "name": "empty_inventory",
+      "problem": {
+        "schema_version": 1,
+        "width": 1,
+        "height": 1,
+        "colors": [
+          {
+            "id": 1,
+            "name": "Sample 1",
+            "rgb": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Sample 2",
+            "rgb": [
+              10,
+              10,
+              10
+            ]
+          }
+        ],
+        "pixels": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "error_budget": 300
+      },
+      "inventory": {
+        "schema_version": 1,
+        "pieces": [
+          {
+            "color_id": 1,
+            "shape": "1x1",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 1,
+            "shape": "1x2",
+            "available": 0,
+            "rotate": true
+          },
+          {
+            "color_id": 1,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x1",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x2",
+            "available": 0,
+            "rotate": true
+          },
+          {
+            "color_id": 2,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          }
+        ]
+      },
+      "budgets": [
+        300,
+        0,
+        299,
+        601,
+        300
+      ]
+    },
+    {
+      "name": "4x3-blocks",
+      "problem": {
+        "schema_version": 1,
+        "width": 4,
+        "height": 3,
+        "colors": [
+          {
+            "id": 1,
+            "name": "Sample 1",
+            "rgb": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Sample 2",
+            "rgb": [
+              100,
+              80,
+              20
+            ]
+          },
+          {
+            "id": 3,
+            "name": "Sample 3",
+            "rgb": [
+              255,
+              255,
+              255
+            ]
+          }
+        ],
+        "pixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ],
+        "error_budget": 180000
+      },
+      "inventory": {
+        "schema_version": 1,
+        "pieces": [
+          {
+            "color_id": 1,
+            "shape": "1x1",
+            "available": 6,
+            "rotate": false
+          },
+          {
+            "color_id": 1,
+            "shape": "1x2",
+            "available": 4,
+            "rotate": true
+          },
+          {
+            "color_id": 1,
+            "shape": "2x2",
+            "available": 2,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x1",
+            "available": 6,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x2",
+            "available": 4,
+            "rotate": true
+          },
+          {
+            "color_id": 2,
+            "shape": "2x2",
+            "available": 2,
+            "rotate": false
+          },
+          {
+            "color_id": 3,
+            "shape": "1x1",
+            "available": 6,
+            "rotate": false
+          },
+          {
+            "color_id": 3,
+            "shape": "1x2",
+            "available": 4,
+            "rotate": true
+          },
+          {
+            "color_id": 3,
+            "shape": "2x2",
+            "available": 2,
+            "rotate": false
+          }
+        ]
+      },
+      "budgets": [
+        180000,
+        0,
+        179999,
+        360001,
+        180000
+      ]
+    },
+    {
+      "name": "4x4-checker",
+      "problem": {
+        "schema_version": 1,
+        "width": 4,
+        "height": 4,
+        "colors": [
+          {
+            "id": 1,
+            "name": "Sample 1",
+            "rgb": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Sample 2",
+            "rgb": [
+              100,
+              80,
+              20
+            ]
+          },
+          {
+            "id": 3,
+            "name": "Sample 3",
+            "rgb": [
+              255,
+              255,
+              255
+            ]
+          }
+        ],
+        "pixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "error_budget": 240000
+      },
+      "inventory": {
+        "schema_version": 1,
+        "pieces": [
+          {
+            "color_id": 1,
+            "shape": "1x1",
+            "available": 7,
+            "rotate": false
+          },
+          {
+            "color_id": 1,
+            "shape": "1x2",
+            "available": 5,
+            "rotate": true
+          },
+          {
+            "color_id": 1,
+            "shape": "2x2",
+            "available": 3,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x1",
+            "available": 7,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x2",
+            "available": 5,
+            "rotate": true
+          },
+          {
+            "color_id": 2,
+            "shape": "2x2",
+            "available": 3,
+            "rotate": false
+          },
+          {
+            "color_id": 3,
+            "shape": "1x1",
+            "available": 7,
+            "rotate": false
+          },
+          {
+            "color_id": 3,
+            "shape": "1x2",
+            "available": 5,
+            "rotate": true
+          },
+          {
+            "color_id": 3,
+            "shape": "2x2",
+            "available": 3,
+            "rotate": false
+          }
+        ]
+      },
+      "budgets": [
+        240000,
+        0,
+        239999,
+        480001,
+        240000
+      ]
+    },
+    {
+      "name": "6x4-noise",
+      "problem": {
+        "schema_version": 1,
+        "width": 6,
+        "height": 4,
+        "colors": [
+          {
+            "id": 1,
+            "name": "Sample 1",
+            "rgb": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Sample 2",
+            "rgb": [
+              100,
+              80,
+              20
+            ]
+          },
+          {
+            "id": 3,
+            "name": "Sample 3",
+            "rgb": [
+              255,
+              255,
+              255
+            ]
+          }
+        ],
+        "pixels": [
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "error_budget": 360000
+      },
+      "inventory": {
+        "schema_version": 1,
+        "pieces": [
+          {
+            "color_id": 1,
+            "shape": "1x1",
+            "available": 10,
+            "rotate": false
+          },
+          {
+            "color_id": 1,
+            "shape": "1x2",
+            "available": 7,
+            "rotate": true
+          },
+          {
+            "color_id": 1,
+            "shape": "2x2",
+            "available": 4,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x1",
+            "available": 10,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x2",
+            "available": 7,
+            "rotate": true
+          },
+          {
+            "color_id": 2,
+            "shape": "2x2",
+            "available": 4,
+            "rotate": false
+          },
+          {
+            "color_id": 3,
+            "shape": "1x1",
+            "available": 10,
+            "rotate": false
+          },
+          {
+            "color_id": 3,
+            "shape": "1x2",
+            "available": 7,
+            "rotate": true
+          },
+          {
+            "color_id": 3,
+            "shape": "2x2",
+            "available": 4,
+            "rotate": false
+          }
+        ]
+      },
+      "budgets": [
+        360000,
+        0,
+        359999,
+        720001,
+        360000
+      ]
+    },
+    {
+      "name": "8x8-noise",
+      "problem": {
+        "schema_version": 1,
+        "width": 8,
+        "height": 8,
+        "colors": [
+          {
+            "id": 1,
+            "name": "Sample 1",
+            "rgb": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Sample 2",
+            "rgb": [
+              100,
+              80,
+              20
+            ]
+          },
+          {
+            "id": 3,
+            "name": "Sample 3",
+            "rgb": [
+              255,
+              255,
+              255
+            ]
+          }
+        ],
+        "pixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            255
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            100,
+            80,
+            20
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "error_budget": 960000
+      },
+      "inventory": {
+        "schema_version": 1,
+        "pieces": [
+          {
+            "color_id": 1,
+            "shape": "1x1",
+            "available": 23,
+            "rotate": false
+          },
+          {
+            "color_id": 1,
+            "shape": "1x2",
+            "available": 17,
+            "rotate": true
+          },
+          {
+            "color_id": 1,
+            "shape": "2x2",
+            "available": 9,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x1",
+            "available": 23,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x2",
+            "available": 17,
+            "rotate": true
+          },
+          {
+            "color_id": 2,
+            "shape": "2x2",
+            "available": 9,
+            "rotate": false
+          },
+          {
+            "color_id": 3,
+            "shape": "1x1",
+            "available": 23,
+            "rotate": false
+          },
+          {
+            "color_id": 3,
+            "shape": "1x2",
+            "available": 17,
+            "rotate": true
+          },
+          {
+            "color_id": 3,
+            "shape": "2x2",
+            "available": 9,
+            "rotate": false
+          }
+        ]
+      },
+      "budgets": [
+        960000,
+        0,
+        959999,
+        1920001,
+        960000
+      ]
+    },
+    {
+      "name": "eight-colors-64-cells",
+      "problem": {
+        "schema_version": 1,
+        "width": 8,
+        "height": 8,
+        "colors": [
+          {
+            "id": 1,
+            "name": "Sample 1",
+            "rgb": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Sample 2",
+            "rgb": [
+              30,
+              30,
+              30
+            ]
+          },
+          {
+            "id": 3,
+            "name": "Sample 3",
+            "rgb": [
+              60,
+              60,
+              60
+            ]
+          },
+          {
+            "id": 4,
+            "name": "Sample 4",
+            "rgb": [
+              90,
+              90,
+              90
+            ]
+          },
+          {
+            "id": 5,
+            "name": "Sample 5",
+            "rgb": [
+              120,
+              120,
+              120
+            ]
+          },
+          {
+            "id": 6,
+            "name": "Sample 6",
+            "rgb": [
+              150,
+              150,
+              150
+            ]
+          },
+          {
+            "id": 7,
+            "name": "Sample 7",
+            "rgb": [
+              180,
+              180,
+              180
+            ]
+          },
+          {
+            "id": 8,
+            "name": "Sample 8",
+            "rgb": [
+              210,
+              210,
+              210
+            ]
+          }
+        ],
+        "pixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            30,
+            30,
+            30
+          ],
+          [
+            60,
+            60,
+            60
+          ],
+          [
+            90,
+            90,
+            90
+          ],
+          [
+            120,
+            120,
+            120
+          ],
+          [
+            150,
+            150,
+            150
+          ],
+          [
+            180,
+            180,
+            180
+          ],
+          [
+            210,
+            210,
+            210
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            30,
+            30,
+            30
+          ],
+          [
+            60,
+            60,
+            60
+          ],
+          [
+            90,
+            90,
+            90
+          ],
+          [
+            120,
+            120,
+            120
+          ],
+          [
+            150,
+            150,
+            150
+          ],
+          [
+            180,
+            180,
+            180
+          ],
+          [
+            210,
+            210,
+            210
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            30,
+            30,
+            30
+          ],
+          [
+            60,
+            60,
+            60
+          ],
+          [
+            90,
+            90,
+            90
+          ],
+          [
+            120,
+            120,
+            120
+          ],
+          [
+            150,
+            150,
+            150
+          ],
+          [
+            180,
+            180,
+            180
+          ],
+          [
+            210,
+            210,
+            210
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            30,
+            30,
+            30
+          ],
+          [
+            60,
+            60,
+            60
+          ],
+          [
+            90,
+            90,
+            90
+          ],
+          [
+            120,
+            120,
+            120
+          ],
+          [
+            150,
+            150,
+            150
+          ],
+          [
+            180,
+            180,
+            180
+          ],
+          [
+            210,
+            210,
+            210
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            30,
+            30,
+            30
+          ],
+          [
+            60,
+            60,
+            60
+          ],
+          [
+            90,
+            90,
+            90
+          ],
+          [
+            120,
+            120,
+            120
+          ],
+          [
+            150,
+            150,
+            150
+          ],
+          [
+            180,
+            180,
+            180
+          ],
+          [
+            210,
+            210,
+            210
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            30,
+            30,
+            30
+          ],
+          [
+            60,
+            60,
+            60
+          ],
+          [
+            90,
+            90,
+            90
+          ],
+          [
+            120,
+            120,
+            120
+          ],
+          [
+            150,
+            150,
+            150
+          ],
+          [
+            180,
+            180,
+            180
+          ],
+          [
+            210,
+            210,
+            210
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            30,
+            30,
+            30
+          ],
+          [
+            60,
+            60,
+            60
+          ],
+          [
+            90,
+            90,
+            90
+          ],
+          [
+            120,
+            120,
+            120
+          ],
+          [
+            150,
+            150,
+            150
+          ],
+          [
+            180,
+            180,
+            180
+          ],
+          [
+            210,
+            210,
+            210
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            30,
+            30,
+            30
+          ],
+          [
+            60,
+            60,
+            60
+          ],
+          [
+            90,
+            90,
+            90
+          ],
+          [
+            120,
+            120,
+            120
+          ],
+          [
+            150,
+            150,
+            150
+          ],
+          [
+            180,
+            180,
+            180
+          ],
+          [
+            210,
+            210,
+            210
+          ]
+        ],
+        "error_budget": 640000
+      },
+      "inventory": {
+        "schema_version": 1,
+        "pieces": [
+          {
+            "color_id": 1,
+            "shape": "1x1",
+            "available": 8,
+            "rotate": false
+          },
+          {
+            "color_id": 1,
+            "shape": "1x2",
+            "available": 4,
+            "rotate": true
+          },
+          {
+            "color_id": 1,
+            "shape": "2x2",
+            "available": 2,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x1",
+            "available": 8,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x2",
+            "available": 4,
+            "rotate": true
+          },
+          {
+            "color_id": 2,
+            "shape": "2x2",
+            "available": 2,
+            "rotate": false
+          },
+          {
+            "color_id": 3,
+            "shape": "1x1",
+            "available": 8,
+            "rotate": false
+          },
+          {
+            "color_id": 3,
+            "shape": "1x2",
+            "available": 4,
+            "rotate": true
+          },
+          {
+            "color_id": 3,
+            "shape": "2x2",
+            "available": 2,
+            "rotate": false
+          },
+          {
+            "color_id": 4,
+            "shape": "1x1",
+            "available": 8,
+            "rotate": false
+          },
+          {
+            "color_id": 4,
+            "shape": "1x2",
+            "available": 4,
+            "rotate": true
+          },
+          {
+            "color_id": 4,
+            "shape": "2x2",
+            "available": 2,
+            "rotate": false
+          },
+          {
+            "color_id": 5,
+            "shape": "1x1",
+            "available": 8,
+            "rotate": false
+          },
+          {
+            "color_id": 5,
+            "shape": "1x2",
+            "available": 4,
+            "rotate": true
+          },
+          {
+            "color_id": 5,
+            "shape": "2x2",
+            "available": 2,
+            "rotate": false
+          },
+          {
+            "color_id": 6,
+            "shape": "1x1",
+            "available": 8,
+            "rotate": false
+          },
+          {
+            "color_id": 6,
+            "shape": "1x2",
+            "available": 4,
+            "rotate": true
+          },
+          {
+            "color_id": 6,
+            "shape": "2x2",
+            "available": 2,
+            "rotate": false
+          },
+          {
+            "color_id": 7,
+            "shape": "1x1",
+            "available": 8,
+            "rotate": false
+          },
+          {
+            "color_id": 7,
+            "shape": "1x2",
+            "available": 4,
+            "rotate": true
+          },
+          {
+            "color_id": 7,
+            "shape": "2x2",
+            "available": 2,
+            "rotate": false
+          },
+          {
+            "color_id": 8,
+            "shape": "1x1",
+            "available": 8,
+            "rotate": false
+          },
+          {
+            "color_id": 8,
+            "shape": "1x2",
+            "available": 4,
+            "rotate": true
+          },
+          {
+            "color_id": 8,
+            "shape": "2x2",
+            "available": 2,
+            "rotate": false
+          }
+        ]
+      },
+      "budgets": [
+        640000,
+        0,
+        639999,
+        1280001,
+        640000
+      ]
+    },
+    {
+      "name": "zero-time",
+      "problem": {
+        "schema_version": 1,
+        "width": 2,
+        "height": 1,
+        "colors": [
+          {
+            "id": 1,
+            "name": "Sample 1",
+            "rgb": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Sample 2",
+            "rgb": [
+              10,
+              10,
+              10
+            ]
+          }
+        ],
+        "pixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            10,
+            10,
+            10
+          ]
+        ],
+        "error_budget": 300
+      },
+      "inventory": {
+        "schema_version": 1,
+        "pieces": [
+          {
+            "color_id": 1,
+            "shape": "1x1",
+            "available": 2,
+            "rotate": false
+          },
+          {
+            "color_id": 1,
+            "shape": "1x2",
+            "available": 1,
+            "rotate": true
+          },
+          {
+            "color_id": 1,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x1",
+            "available": 2,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x2",
+            "available": 1,
+            "rotate": true
+          },
+          {
+            "color_id": 2,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          }
+        ]
+      },
+      "budgets": [
+        300,
+        299,
+        0
+      ],
+      "settings": {
+        "total_time_limit": 0
+      }
+    },
+    {
+      "name": "zero-nodes",
+      "problem": {
+        "schema_version": 1,
+        "width": 2,
+        "height": 1,
+        "colors": [
+          {
+            "id": 1,
+            "name": "Sample 1",
+            "rgb": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Sample 2",
+            "rgb": [
+              10,
+              10,
+              10
+            ]
+          }
+        ],
+        "pixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            10,
+            10,
+            10
+          ]
+        ],
+        "error_budget": 300
+      },
+      "inventory": {
+        "schema_version": 1,
+        "pieces": [
+          {
+            "color_id": 1,
+            "shape": "1x1",
+            "available": 2,
+            "rotate": false
+          },
+          {
+            "color_id": 1,
+            "shape": "1x2",
+            "available": 1,
+            "rotate": true
+          },
+          {
+            "color_id": 1,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x1",
+            "available": 2,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x2",
+            "available": 1,
+            "rotate": true
+          },
+          {
+            "color_id": 2,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          }
+        ]
+      },
+      "budgets": [
+        300,
+        299,
+        0
+      ],
+      "settings": {
+        "total_node_limit": 0
+      }
+    },
+    {
+      "name": "incumbent-only",
+      "problem": {
+        "schema_version": 1,
+        "width": 2,
+        "height": 1,
+        "colors": [
+          {
+            "id": 1,
+            "name": "Sample 1",
+            "rgb": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Sample 2",
+            "rgb": [
+              10,
+              10,
+              10
+            ]
+          }
+        ],
+        "pixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            10,
+            10,
+            10
+          ]
+        ],
+        "error_budget": 300
+      },
+      "inventory": {
+        "schema_version": 1,
+        "pieces": [
+          {
+            "color_id": 1,
+            "shape": "1x1",
+            "available": 2,
+            "rotate": false
+          },
+          {
+            "color_id": 1,
+            "shape": "1x2",
+            "available": 1,
+            "rotate": true
+          },
+          {
+            "color_id": 1,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x1",
+            "available": 2,
+            "rotate": false
+          },
+          {
+            "color_id": 2,
+            "shape": "1x2",
+            "available": 1,
+            "rotate": true
+          },
+          {
+            "color_id": 2,
+            "shape": "2x2",
+            "available": 0,
+            "rotate": false
+          }
+        ]
+      },
+      "budgets": [
+        300,
+        299,
+        0
+      ],
+      "settings": {
+        "node_limit": 0
+      }
+    }
+  ],
+  "measurement": "Fresh process per case; perf_counter including search, validation and exports; Linux ru_maxrss KiB including imports; all outcomes retained."
+}

@@ -76,6 +76,20 @@ def export(problem, inventory, output, *, time_limit=10.0, node_limit=100_000, s
           or result.get('image_error') is not None or
           (result['status'] == 'infeasible') != (result.get('termination') == 'exhausted')):
         raise InputError('inconsistent solver result without placements')
+    return save_report(report, plan, output)
+
+
+def save_report(report, plan, output):
+    """Write existing validated results without invoking optimization."""
+    output = Path(output)
+    if output.exists() or output.is_symlink():
+        raise InputError(f'output already exists: {output}; choose a new directory')
+    problem, inventory = inputs(report['problem'], report['inventory'])
+    result = report['result']
+    if plan is not None:
+        checked = validate_plan(plan, problem, inventory)
+        validate_settings(plan['settings']['time_limit_seconds'], plan['settings']['node_limit'],
+                          plan['settings']['section_size'])
     output.parent.mkdir(parents=True, exist_ok=True)
     staging = Path(tempfile.mkdtemp(prefix=f'.{output.name}-', dir=output.parent))
     try:

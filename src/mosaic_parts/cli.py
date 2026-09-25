@@ -12,6 +12,7 @@ from .model import InputError
 from .packing_export import pack
 from .packing_solver import SolverError
 from .joint_export import optimize
+from .explorer_export import explore_image, read_report, export_selected, cancellation_signals
 
 
 def background(value):
@@ -55,9 +56,40 @@ def main(argv=None):
     joint.add_argument("--time-limit", type=float, default=10.0)
     joint.add_argument("--node-limit", type=int, default=100_000)
     joint.add_argument("--section-size", type=int, default=8)
+    sweep = commands.add_parser("explore", help="compare up to 12 explicit image-error budgets offline")
+    sweep.add_argument("image", type=Path)
+    sweep.add_argument("--palette", type=Path, required=True)
+    sweep.add_argument("--inventory", type=Path, required=True)
+    sweep.add_argument("--output", type=Path, required=True)
+    sweep.add_argument("--width", type=int, required=True)
+    sweep.add_argument("--height", type=int, required=True)
+    sweep.add_argument("--budgets", type=int, nargs='+', required=True)
+    sweep.add_argument("--fit", choices=("contain", "cover", "stretch"), default="contain")
+    sweep.add_argument("--background", type=background, default=(255, 255, 255))
+    sweep.add_argument("--time-limit", type=float, default=10.0)
+    sweep.add_argument("--node-limit", type=int, default=100_000)
+    sweep.add_argument("--total-time-limit", type=float, default=60.0)
+    sweep.add_argument("--total-node-limit", type=int, default=600_000)
+    sweep.add_argument("--section-size", type=int, default=8)
+    saved = commands.add_parser("export-plan", help="export a saved explorer plan without optimization")
+    saved.add_argument("comparison", type=Path)
+    saved.add_argument("--plan", required=True, help="plan ID from comparison, e.g. plan-1")
+    saved.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
     try:
-        if args.command == "example":
+        if args.command == "explore":
+            with cancellation_signals() as cancelled:
+                report = explore_image(args.image, args.palette, args.inventory, args.output, args.width, args.height,
+                                       args.budgets, fit=args.fit, background=args.background,
+                                       time_limit=args.time_limit, node_limit=args.node_limit,
+                                       total_time_limit=args.total_time_limit, total_node_limit=args.total_node_limit,
+                                       section_size=args.section_size, cancelled=cancelled)
+            print(f"Compared {len(report['outcomes'])} budgets; {len(report['plans'])} validated plans in {args.output}")
+            return 0
+        elif args.command == "export-plan":
+            export_selected(read_report(args.comparison), args.plan, args.output)
+            print(f"Exported {args.plan} to {args.output} without optimization")
+        elif args.command == "example":
             make_example(args.output)
             print(f"Created synthetic inputs in {args.output}")
         elif args.command == "optimize":

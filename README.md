@@ -28,6 +28,28 @@ python3 -m pip wheel --wheel-dir wheelhouse .
 
 This is a local package; no registry publication is required.
 
+## Compare error budgets and export a choice
+
+The [offline budget explorer](docs/explorer.md) compares up to 12 explicit
+color-error budgets using identical sampled pixels and inventory. It writes a
+self-contained HTML comparison with keyboard-accessible selection, source/plan
+previews, proof status and downloadable assembly bundles. Saved JSON can also
+export a choice without rerunning optimization.
+
+```sh
+.venv/bin/mosaic-parts explore examples/source.png \
+  --palette examples/joint-palette.json --inventory examples/pieces.json \
+  --width 6 --height 4 --budgets 0 50000 100000 200000 400000 \
+  --section-size 3 --output example-output/explorer
+.venv/bin/mosaic-parts export-plan example-output/explorer/comparison.json \
+  --plan plan-3 --output example-output/explorer-selected
+```
+
+The sample offers proven piece minima of **8, 7 and 6 pieces** at budgets
+50,000, 100,000 and 200,000. Sampled budgets are not a proven Pareto frontier.
+[Search/cancellation limits and one-command verification](docs/explorer.md)
+and [recorded experiments](experiments/explorer.md) explain the scope.
+
 ## Joint color and piece optimization
 
 The [complete joint-planning example](docs/joint.md) produces a **six-piece,

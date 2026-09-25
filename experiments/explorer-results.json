@@ -1,0 +1,1295 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-09-25T21:42:13.007901+00:00",
+  "suite_sha256": "a352267871401a42f80ed99b36a5bc9ce03f0992a296ddeaa76ae2541b590d35",
+  "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+  "versions": {
+    "python": "3.12.3",
+    "pillow": "12.1.1"
+  },
+  "measurement": "Fresh process per case; perf_counter including search, validation and exports; Linux ru_maxrss KiB including imports; all outcomes retained.",
+  "results": [
+    {
+      "case": "boundary_below",
+      "settings": {
+        "time_limit": 5.0,
+        "total_time_limit": 20.0,
+        "node_limit": 20000,
+        "total_node_limit": 50000,
+        "section_size": 3
+      },
+      "outcomes": [
+        {
+          "budget": 299,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 2,
+            "candidates_considered": 6,
+            "piece_count": 2,
+            "image_error": 0,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 0,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 2,
+            "candidates_considered": 6,
+            "piece_count": 2,
+            "image_error": 0,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 298,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 2,
+            "candidates_considered": 6,
+            "piece_count": 2,
+            "image_error": 0,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 599,
+          "plan_id": "plan-2",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 6,
+            "piece_count": 1,
+            "image_error": 300,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 299,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 2,
+            "candidates_considered": 6,
+            "piece_count": 2,
+            "image_error": 0,
+            "lower_bound": 1
+          }
+        }
+      ],
+      "unique_plans": 2,
+      "nodes_consumed": 7,
+      "elapsed_seconds": 0.060441974084824324,
+      "peak_process_rss_kib": 28064,
+      "output_bytes": {
+        "comparison.html": 40658,
+        "comparison.json": 10088
+      }
+    },
+    {
+      "case": "boundary_exact",
+      "settings": {
+        "time_limit": 5.0,
+        "total_time_limit": 20.0,
+        "node_limit": 20000,
+        "total_node_limit": 50000,
+        "section_size": 3
+      },
+      "outcomes": [
+        {
+          "budget": 300,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 6,
+            "piece_count": 1,
+            "image_error": 300,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 0,
+          "plan_id": "plan-2",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 2,
+            "candidates_considered": 6,
+            "piece_count": 2,
+            "image_error": 0,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 299,
+          "plan_id": "plan-2",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 2,
+            "candidates_considered": 6,
+            "piece_count": 2,
+            "image_error": 0,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 601,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 6,
+            "piece_count": 1,
+            "image_error": 300,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 300,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 6,
+            "piece_count": 1,
+            "image_error": 300,
+            "lower_bound": 1
+          }
+        }
+      ],
+      "unique_plans": 2,
+      "nodes_consumed": 6,
+      "elapsed_seconds": 0.05890688207000494,
+      "peak_process_rss_kib": 28196,
+      "output_bytes": {
+        "comparison.html": 40642,
+        "comparison.json": 10090
+      }
+    },
+    {
+      "case": "rotation_required",
+      "settings": {
+        "time_limit": 5.0,
+        "total_time_limit": 20.0,
+        "node_limit": 20000,
+        "total_node_limit": 50000,
+        "section_size": 3
+      },
+      "outcomes": [
+        {
+          "budget": 300,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 1,
+            "piece_count": 1,
+            "image_error": 300,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 0,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 1,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 299,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 1,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 601,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 1,
+            "piece_count": 1,
+            "image_error": 300,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 300,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 1,
+            "piece_count": 1,
+            "image_error": 300,
+            "lower_bound": 1
+          }
+        }
+      ],
+      "unique_plans": 1,
+      "nodes_consumed": 4,
+      "elapsed_seconds": 0.03814527811482549,
+      "peak_process_rss_kib": 27940,
+      "output_bytes": {
+        "comparison.html": 21943,
+        "comparison.json": 6559
+      }
+    },
+    {
+      "case": "rotation_forbidden",
+      "settings": {
+        "time_limit": 5.0,
+        "total_time_limit": 20.0,
+        "node_limit": 20000,
+        "total_node_limit": 50000,
+        "section_size": 3
+      },
+      "outcomes": [
+        {
+          "budget": 300,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 0,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 0,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 0,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 299,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 0,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 601,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 0,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 300,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 0,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": 1
+          }
+        }
+      ],
+      "unique_plans": 0,
+      "nodes_consumed": 4,
+      "elapsed_seconds": 0.004897171864286065,
+      "peak_process_rss_kib": 25708,
+      "output_bytes": {
+        "comparison.html": 3055,
+        "comparison.json": 3217
+      }
+    },
+    {
+      "case": "scarce_nearest_color",
+      "settings": {
+        "time_limit": 5.0,
+        "total_time_limit": 20.0,
+        "node_limit": 20000,
+        "total_node_limit": 50000,
+        "section_size": 3
+      },
+      "outcomes": [
+        {
+          "budget": 300,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 1,
+            "piece_count": 1,
+            "image_error": 300,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 0,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 1,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 299,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 1,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 601,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 1,
+            "piece_count": 1,
+            "image_error": 300,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 300,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 1,
+            "piece_count": 1,
+            "image_error": 300,
+            "lower_bound": 1
+          }
+        }
+      ],
+      "unique_plans": 1,
+      "nodes_consumed": 4,
+      "elapsed_seconds": 0.04183070408180356,
+      "peak_process_rss_kib": 27944,
+      "output_bytes": {
+        "comparison.html": 22175,
+        "comparison.json": 6559
+      }
+    },
+    {
+      "case": "tied_colors_and_tilings",
+      "settings": {
+        "time_limit": 5.0,
+        "total_time_limit": 20.0,
+        "node_limit": 20000,
+        "total_node_limit": 50000,
+        "section_size": 3
+      },
+      "outcomes": [
+        {
+          "budget": 300,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 8,
+            "piece_count": 2,
+            "image_error": 300,
+            "lower_bound": 2
+          }
+        },
+        {
+          "budget": 0,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 8,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": 2
+          }
+        },
+        {
+          "budget": 299,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 8,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": 2
+          }
+        },
+        {
+          "budget": 601,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 8,
+            "piece_count": 2,
+            "image_error": 300,
+            "lower_bound": 2
+          }
+        },
+        {
+          "budget": 300,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 8,
+            "piece_count": 2,
+            "image_error": 300,
+            "lower_bound": 2
+          }
+        }
+      ],
+      "unique_plans": 1,
+      "nodes_consumed": 4,
+      "elapsed_seconds": 0.04215899505652487,
+      "peak_process_rss_kib": 28092,
+      "output_bytes": {
+        "comparison.html": 22287,
+        "comparison.json": 7065
+      }
+    },
+    {
+      "case": "geometry_impossible",
+      "settings": {
+        "time_limit": 5.0,
+        "total_time_limit": 20.0,
+        "node_limit": 20000,
+        "total_node_limit": 50000,
+        "section_size": 3
+      },
+      "outcomes": [
+        {
+          "budget": 0,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 0,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 0,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 0,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 0,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 0,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 1,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 0,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 0,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 0,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": 1
+          }
+        }
+      ],
+      "unique_plans": 0,
+      "nodes_consumed": 2,
+      "elapsed_seconds": 0.0046208861749619246,
+      "peak_process_rss_kib": 25584,
+      "output_bytes": {
+        "comparison.html": 3047,
+        "comparison.json": 3243
+      }
+    },
+    {
+      "case": "empty_inventory",
+      "settings": {
+        "time_limit": 5.0,
+        "total_time_limit": 20.0,
+        "node_limit": 20000,
+        "total_node_limit": 50000,
+        "section_size": 3
+      },
+      "outcomes": [
+        {
+          "budget": 300,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 0,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": null
+          }
+        },
+        {
+          "budget": 0,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 0,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": null
+          }
+        },
+        {
+          "budget": 299,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 0,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": null
+          }
+        },
+        {
+          "budget": 601,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 0,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": null
+          }
+        },
+        {
+          "budget": 300,
+          "plan_id": null,
+          "result": {
+            "status": "infeasible",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 0,
+            "piece_count": null,
+            "image_error": null,
+            "lower_bound": null
+          }
+        }
+      ],
+      "unique_plans": 0,
+      "nodes_consumed": 4,
+      "elapsed_seconds": 0.004666217137128115,
+      "peak_process_rss_kib": 25584,
+      "output_bytes": {
+        "comparison.html": 3055,
+        "comparison.json": 3178
+      }
+    },
+    {
+      "case": "4x3-blocks",
+      "settings": {
+        "time_limit": 5.0,
+        "total_time_limit": 20.0,
+        "node_limit": 20000,
+        "total_node_limit": 50000,
+        "section_size": 3
+      },
+      "outcomes": [
+        {
+          "budget": 180000,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 46,
+            "candidates_considered": 105,
+            "piece_count": 4,
+            "image_error": 0,
+            "lower_bound": 3
+          }
+        },
+        {
+          "budget": 0,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 11,
+            "candidates_considered": 105,
+            "piece_count": 4,
+            "image_error": 0,
+            "lower_bound": 3
+          }
+        },
+        {
+          "budget": 179999,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 46,
+            "candidates_considered": 105,
+            "piece_count": 4,
+            "image_error": 0,
+            "lower_bound": 3
+          }
+        },
+        {
+          "budget": 360001,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 56,
+            "candidates_considered": 105,
+            "piece_count": 4,
+            "image_error": 0,
+            "lower_bound": 3
+          }
+        },
+        {
+          "budget": 180000,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 46,
+            "candidates_considered": 105,
+            "piece_count": 4,
+            "image_error": 0,
+            "lower_bound": 3
+          }
+        }
+      ],
+      "unique_plans": 1,
+      "nodes_consumed": 159,
+      "elapsed_seconds": 0.0741470200009644,
+      "peak_process_rss_kib": 28328,
+      "output_bytes": {
+        "comparison.html": 27727,
+        "comparison.json": 10079
+      }
+    },
+    {
+      "case": "4x4-checker",
+      "settings": {
+        "time_limit": 5.0,
+        "total_time_limit": 20.0,
+        "node_limit": 20000,
+        "total_node_limit": 50000,
+        "section_size": 3
+      },
+      "outcomes": [
+        {
+          "budget": 240000,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "feasible",
+            "termination": "node_limit",
+            "nodes": 20000,
+            "candidates_considered": 147,
+            "piece_count": 10,
+            "image_error": 177075,
+            "lower_bound": 4
+          }
+        },
+        {
+          "budget": 0,
+          "plan_id": "plan-2",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 16,
+            "candidates_considered": 147,
+            "piece_count": 16,
+            "image_error": 0,
+            "lower_bound": 4
+          }
+        },
+        {
+          "budget": 239999,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "feasible",
+            "termination": "node_limit",
+            "nodes": 20000,
+            "candidates_considered": 147,
+            "piece_count": 10,
+            "image_error": 177075,
+            "lower_bound": 4
+          }
+        },
+        {
+          "budget": 480001,
+          "plan_id": "plan-3",
+          "result": {
+            "status": "feasible",
+            "termination": "node_limit",
+            "nodes": 9984,
+            "candidates_considered": 147,
+            "piece_count": 7,
+            "image_error": 413625,
+            "lower_bound": 4
+          }
+        },
+        {
+          "budget": 240000,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "feasible",
+            "termination": "node_limit",
+            "nodes": 20000,
+            "candidates_considered": 147,
+            "piece_count": 10,
+            "image_error": 177075,
+            "lower_bound": 4
+          }
+        }
+      ],
+      "unique_plans": 3,
+      "nodes_consumed": 50000,
+      "elapsed_seconds": 0.34352339897304773,
+      "peak_process_rss_kib": 28592,
+      "output_bytes": {
+        "comparison.html": 98325,
+        "comparison.json": 28055
+      }
+    },
+    {
+      "case": "6x4-noise",
+      "settings": {
+        "time_limit": 5.0,
+        "total_time_limit": 20.0,
+        "node_limit": 20000,
+        "total_node_limit": 50000,
+        "section_size": 3
+      },
+      "outcomes": [
+        {
+          "budget": 360000,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 11256,
+            "candidates_considered": 231,
+            "piece_count": 9,
+            "image_error": 270150,
+            "lower_bound": 6
+          }
+        },
+        {
+          "budget": 0,
+          "plan_id": "plan-2",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 2951,
+            "candidates_considered": 231,
+            "piece_count": 13,
+            "image_error": 0,
+            "lower_bound": 6
+          }
+        },
+        {
+          "budget": 359999,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 11256,
+            "candidates_considered": 231,
+            "piece_count": 9,
+            "image_error": 270150,
+            "lower_bound": 6
+          }
+        },
+        {
+          "budget": 720001,
+          "plan_id": "plan-3",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 231,
+            "piece_count": 6,
+            "image_error": 616575,
+            "lower_bound": 6
+          }
+        },
+        {
+          "budget": 360000,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 11256,
+            "candidates_considered": 231,
+            "piece_count": 9,
+            "image_error": 270150,
+            "lower_bound": 6
+          }
+        }
+      ],
+      "unique_plans": 3,
+      "nodes_consumed": 25464,
+      "elapsed_seconds": 0.2459551829379052,
+      "peak_process_rss_kib": 28472,
+      "output_bytes": {
+        "comparison.html": 103724,
+        "comparison.json": 29915
+      }
+    },
+    {
+      "case": "8x8-noise",
+      "settings": {
+        "time_limit": 5.0,
+        "total_time_limit": 20.0,
+        "node_limit": 20000,
+        "total_node_limit": 50000,
+        "section_size": 3
+      },
+      "outcomes": [
+        {
+          "budget": 960000,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "feasible",
+            "termination": "node_limit",
+            "nodes": 20000,
+            "candidates_considered": 675,
+            "piece_count": 26,
+            "image_error": 953925,
+            "lower_bound": 16
+          }
+        },
+        {
+          "budget": 0,
+          "plan_id": "plan-2",
+          "result": {
+            "status": "feasible",
+            "termination": "node_limit",
+            "nodes": 20000,
+            "candidates_considered": 675,
+            "piece_count": 39,
+            "image_error": 0,
+            "lower_bound": 16
+          }
+        },
+        {
+          "budget": 959999,
+          "plan_id": "plan-3",
+          "result": {
+            "status": "feasible",
+            "termination": "node_limit",
+            "nodes": 10000,
+            "candidates_considered": 675,
+            "piece_count": 27,
+            "image_error": 953925,
+            "lower_bound": 16
+          }
+        },
+        {
+          "budget": 1920001,
+          "plan_id": null,
+          "result": {
+            "status": "unknown",
+            "termination": "total_node_limit",
+            "piece_count": null,
+            "image_error": null,
+            "nodes": 0,
+            "candidates_considered": 0,
+            "lower_bound": null
+          }
+        },
+        {
+          "budget": 960000,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "feasible",
+            "termination": "node_limit",
+            "nodes": 20000,
+            "candidates_considered": 675,
+            "piece_count": 26,
+            "image_error": 953925,
+            "lower_bound": 16
+          }
+        }
+      ],
+      "unique_plans": 3,
+      "nodes_consumed": 50000,
+      "elapsed_seconds": 0.35603090305812657,
+      "peak_process_rss_kib": 29592,
+      "output_bytes": {
+        "comparison.html": 178577,
+        "comparison.json": 58448
+      }
+    },
+    {
+      "case": "eight-colors-64-cells",
+      "settings": {
+        "time_limit": 5.0,
+        "total_time_limit": 20.0,
+        "node_limit": 20000,
+        "total_node_limit": 50000,
+        "section_size": 3
+      },
+      "outcomes": [
+        {
+          "budget": 640000,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 1800,
+            "piece_count": 16,
+            "image_error": 86400,
+            "lower_bound": 16
+          }
+        },
+        {
+          "budget": 0,
+          "plan_id": "plan-2",
+          "result": {
+            "status": "feasible",
+            "termination": "node_limit",
+            "nodes": 20000,
+            "candidates_considered": 1800,
+            "piece_count": 32,
+            "image_error": 0,
+            "lower_bound": 16
+          }
+        },
+        {
+          "budget": 639999,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 1800,
+            "piece_count": 16,
+            "image_error": 86400,
+            "lower_bound": 16
+          }
+        },
+        {
+          "budget": 1280001,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 1800,
+            "piece_count": 16,
+            "image_error": 86400,
+            "lower_bound": 16
+          }
+        },
+        {
+          "budget": 640000,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "optimal",
+            "termination": "exhausted",
+            "nodes": 1,
+            "candidates_considered": 1800,
+            "piece_count": 16,
+            "image_error": 86400,
+            "lower_bound": 16
+          }
+        }
+      ],
+      "unique_plans": 2,
+      "nodes_consumed": 20003,
+      "elapsed_seconds": 0.4060559389181435,
+      "peak_process_rss_kib": 29608,
+      "output_bytes": {
+        "comparison.html": 122008,
+        "comparison.json": 49063
+      }
+    },
+    {
+      "case": "zero-time",
+      "settings": {
+        "time_limit": 5.0,
+        "total_time_limit": 0,
+        "node_limit": 20000,
+        "total_node_limit": 50000,
+        "section_size": 3
+      },
+      "outcomes": [
+        {
+          "budget": 300,
+          "plan_id": null,
+          "result": {
+            "status": "unknown",
+            "termination": "total_time_limit",
+            "piece_count": null,
+            "image_error": null,
+            "nodes": 0,
+            "candidates_considered": 0,
+            "lower_bound": null
+          }
+        },
+        {
+          "budget": 299,
+          "plan_id": null,
+          "result": {
+            "status": "unknown",
+            "termination": "total_time_limit",
+            "piece_count": null,
+            "image_error": null,
+            "nodes": 0,
+            "candidates_considered": 0,
+            "lower_bound": null
+          }
+        },
+        {
+          "budget": 0,
+          "plan_id": null,
+          "result": {
+            "status": "unknown",
+            "termination": "total_time_limit",
+            "piece_count": null,
+            "image_error": null,
+            "nodes": 0,
+            "candidates_considered": 0,
+            "lower_bound": null
+          }
+        }
+      ],
+      "unique_plans": 0,
+      "nodes_consumed": 0,
+      "elapsed_seconds": 0.0035652678925544024,
+      "peak_process_rss_kib": 25584,
+      "output_bytes": {
+        "comparison.html": 2833,
+        "comparison.json": 2635
+      }
+    },
+    {
+      "case": "zero-nodes",
+      "settings": {
+        "time_limit": 5.0,
+        "total_time_limit": 20.0,
+        "node_limit": 20000,
+        "total_node_limit": 0,
+        "section_size": 3
+      },
+      "outcomes": [
+        {
+          "budget": 300,
+          "plan_id": null,
+          "result": {
+            "status": "unknown",
+            "termination": "total_node_limit",
+            "piece_count": null,
+            "image_error": null,
+            "nodes": 0,
+            "candidates_considered": 0,
+            "lower_bound": null
+          }
+        },
+        {
+          "budget": 299,
+          "plan_id": null,
+          "result": {
+            "status": "unknown",
+            "termination": "total_node_limit",
+            "piece_count": null,
+            "image_error": null,
+            "nodes": 0,
+            "candidates_considered": 0,
+            "lower_bound": null
+          }
+        },
+        {
+          "budget": 0,
+          "plan_id": null,
+          "result": {
+            "status": "unknown",
+            "termination": "total_node_limit",
+            "piece_count": null,
+            "image_error": null,
+            "nodes": 0,
+            "candidates_considered": 0,
+            "lower_bound": null
+          }
+        }
+      ],
+      "unique_plans": 0,
+      "nodes_consumed": 0,
+      "elapsed_seconds": 0.003858244977891445,
+      "peak_process_rss_kib": 25588,
+      "output_bytes": {
+        "comparison.html": 2833,
+        "comparison.json": 2634
+      }
+    },
+    {
+      "case": "incumbent-only",
+      "settings": {
+        "time_limit": 5.0,
+        "total_time_limit": 20.0,
+        "node_limit": 0,
+        "total_node_limit": 50000,
+        "section_size": 3
+      },
+      "outcomes": [
+        {
+          "budget": 300,
+          "plan_id": "plan-1",
+          "result": {
+            "status": "feasible",
+            "termination": "node_limit",
+            "nodes": 0,
+            "candidates_considered": 6,
+            "piece_count": 1,
+            "image_error": 300,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 299,
+          "plan_id": "plan-2",
+          "result": {
+            "status": "feasible",
+            "termination": "node_limit",
+            "nodes": 0,
+            "candidates_considered": 6,
+            "piece_count": 2,
+            "image_error": 0,
+            "lower_bound": 1
+          }
+        },
+        {
+          "budget": 0,
+          "plan_id": "plan-2",
+          "result": {
+            "status": "feasible",
+            "termination": "node_limit",
+            "nodes": 0,
+            "candidates_considered": 6,
+            "piece_count": 2,
+            "image_error": 0,
+            "lower_bound": 1
+          }
+        }
+      ],
+      "unique_plans": 2,
+      "nodes_consumed": 0,
+      "elapsed_seconds": 0.04568321397528052,
+      "peak_process_rss_kib": 28052,
+      "output_bytes": {
+        "comparison.html": 40479,
+        "comparison.json": 9498
+      }
+    }
+  ]
+}

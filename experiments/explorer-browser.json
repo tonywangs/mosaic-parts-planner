@@ -1,0 +1,136 @@
+{
+  "network_requests": [],
+  "javascript_errors": [],
+  "checked_downloads": [
+    {
+      "case": "boundary",
+      "plan": "plan-1",
+      "piece_count": 1,
+      "image_error": 300,
+      "recolored_cells": [
+        1
+      ]
+    },
+    {
+      "case": "boundary",
+      "plan": "plan-2",
+      "piece_count": 2,
+      "image_error": 0,
+      "recolored_cells": []
+    },
+    {
+      "case": "max",
+      "plan": "plan-1",
+      "piece_count": 16,
+      "image_error": 86400,
+      "recolored_cells": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39,
+        41,
+        43,
+        45,
+        47,
+        49,
+        51,
+        53,
+        55,
+        57,
+        59,
+        61,
+        63
+      ]
+    },
+    {
+      "case": "max",
+      "plan": "plan-2",
+      "piece_count": 32,
+      "image_error": 0,
+      "recolored_cells": []
+    }
+  ],
+  "sample_outcomes": [
+    {
+      "budget": 0,
+      "plan_id": null,
+      "result": {
+        "status": "infeasible",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 308,
+        "piece_count": null,
+        "image_error": null,
+        "lower_bound": 6
+      }
+    },
+    {
+      "budget": 50000,
+      "plan_id": "plan-1",
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 314,
+        "candidates_considered": 308,
+        "piece_count": 8,
+        "image_error": 38553,
+        "lower_bound": 6
+      }
+    },
+    {
+      "budget": 100000,
+      "plan_id": "plan-2",
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 76,
+        "candidates_considered": 308,
+        "piece_count": 7,
+        "image_error": 61053,
+        "lower_bound": 6
+      }
+    },
+    {
+      "budget": 200000,
+      "plan_id": "plan-3",
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 308,
+        "piece_count": 6,
+        "image_error": 108783,
+        "lower_bound": 6
+      }
+    },
+    {
+      "budget": 400000,
+      "plan_id": "plan-3",
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 308,
+        "piece_count": 6,
+        "image_error": 108783,
+        "lower_bound": 6
+      }
+    }
+  ]
+}

@@ -51,7 +51,7 @@ def validate_plan(plan, problem, inventory):
     checked = validate(problem, inventory, plan.get('placements'))
     result = plan.get('result')
     if (not isinstance(result, dict) or result.get('status') not in ('optimal', 'feasible')
-            or result.get('termination') not in ('exhausted', 'node_limit', 'time_limit')
+            or result.get('termination') not in ('exhausted', 'node_limit', 'time_limit', 'cancelled')
             or (result['status'] == 'optimal') != (result['termination'] == 'exhausted')):
         raise InputError('inconsistent joint result status')
     for k in ('image_error', 'piece_count'):

@@ -86,6 +86,18 @@ def main():
         for path in sorted((work / 'joint-first').iterdir()):
             assert path.read_bytes() == (work / 'joint-second' / path.name).read_bytes(), path.name
             joint_hashes[path.name] = hashlib.sha256(path.read_bytes()).hexdigest()
+        run([cli, 'explore', ROOT / 'examples/source.png', '--palette', ROOT / 'examples/joint-palette.json',
+             '--inventory', ROOT / 'examples/pieces.json', '--width', '6', '--height', '4',
+             '--budgets', '0', '50000', '100000', '200000', '400000', '--section-size', '3',
+             '--output', work / 'explorer'], work, env)
+        comparison = json.loads((work / 'explorer/comparison.json').read_text())
+        assert comparison['plans'], 'offline example must return a validated plan'
+        chosen = comparison['plans'][-1]
+        run([cli, 'export-plan', work / 'explorer/comparison.json', '--plan', chosen['id'],
+             '--output', work / 'selected'], work, env)
+        (work / 'selected-problem.json').write_text(json.dumps(chosen['plan']['problem']))
+        run([binary, ROOT / 'scripts/check_joint.py', work / 'selected', work / 'selected-problem.json',
+             ROOT / 'examples/pieces.json'], work, env)
         hashes = {}
         for path in sorted((work / "first").iterdir()):
             assert path.read_bytes() == (work / "second" / path.name).read_bytes(), path.name

@@ -1784,3 +1784,1781 @@ OK
   ],
   "limitation": "No physical printing or assembly validation."
 }
+
++ /var/lib/dailybuilder/projects/mosaic-parts-planner/.venv/bin/python scripts/freeze_explorer.py --check
+Frozen explorer suite reproduced: 16 cases
++ /var/lib/dailybuilder/projects/mosaic-parts-planner/.venv/bin/python scripts/verify_joint.py
++ /var/lib/dailybuilder/projects/mosaic-parts-planner/.venv/bin/python scripts/freeze_joint.py --check
+Frozen suite reproduced: 23 cases, seed 260926
++ /var/lib/dailybuilder/projects/mosaic-parts-planner/.venv/bin/python -m pip wheel --no-index --no-build-isolation --find-links .wheelhouse --wheel-dir .wheelhouse .
+WARNING: The directory '/var/lib/dailybuilder/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Looking in links: .wheelhouse
+Processing ./.
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Processing ./.wheelhouse/pillow-12.1.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (from mosaic-parts-planner==0.2.0)
+  File was already downloaded /var/lib/dailybuilder/projects/mosaic-parts-planner/.wheelhouse/pillow-12.1.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
+Building wheels for collected packages: mosaic-parts-planner
+  Building wheel for mosaic-parts-planner (pyproject.toml): started
+  Building wheel for mosaic-parts-planner (pyproject.toml): finished with status 'done'
+  Created wheel for mosaic-parts-planner: filename=mosaic_parts_planner-0.2.0-py3-none-any.whl size=44573 sha256=65674e24fc079ac850a28a8175832015d2980ff07dd8d68ce7bf4b69ff9385fe
+  Stored in directory: /tmp/pip-ephem-wheel-cache-9i9c70r1/wheels/12/14/82/fbaa11a06a3fadb02477f8bd89ca10f3e19f018e4b561c792d
+Successfully built mosaic-parts-planner
++ /var/lib/dailybuilder/projects/mosaic-parts-planner/.venv/bin/python scripts/verify_install.py --wheelhouse .wheelhouse
++ /var/lib/dailybuilder/projects/mosaic-parts-planner/.venv/bin/python -m pip --python /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/python install --no-index --find-links /var/lib/dailybuilder/projects/mosaic-parts-planner/.wheelhouse --only-binary=:all: mosaic-parts-planner==0.2.0
+WARNING: The directory '/var/lib/dailybuilder/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Looking in links: /var/lib/dailybuilder/projects/mosaic-parts-planner/.wheelhouse
+Processing /var/lib/dailybuilder/projects/mosaic-parts-planner/.wheelhouse/mosaic_parts_planner-0.2.0-py3-none-any.whl
+Processing /var/lib/dailybuilder/projects/mosaic-parts-planner/.wheelhouse/pillow-12.1.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (from mosaic-parts-planner==0.2.0)
+Installing collected packages: Pillow, mosaic-parts-planner
+
+Successfully installed Pillow-12.1.1 mosaic-parts-planner-0.2.0
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/python -I -c import mosaic_parts, sys; from pathlib import Path; assert Path(mosaic_parts.__file__).is_relative_to(sys.prefix); print(mosaic_parts.__file__)
+/tmp/mosaic-isolated-install-oisdvzbf/venv/lib/python3.12/site-packages/mosaic_parts/__init__.py
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/mosaic-parts example --output /tmp/mosaic-isolated-install-oisdvzbf/input
+Created synthetic inputs in /tmp/mosaic-isolated-install-oisdvzbf/input
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/mosaic-parts convert /tmp/mosaic-isolated-install-oisdvzbf/input/source.png --inventory /tmp/mosaic-isolated-install-oisdvzbf/input/inventory.json --width 24 --height 16 --output /tmp/mosaic-isolated-install-oisdvzbf/first
+Wrote 384 tiles to /tmp/mosaic-isolated-install-oisdvzbf/first; squared RGB error 3055128; unconstrained excess 73 tiles
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/python /var/lib/dailybuilder/projects/mosaic-parts-planner/scripts/check_bundle.py /tmp/mosaic-isolated-install-oisdvzbf/first /tmp/mosaic-isolated-install-oisdvzbf/input/inventory.json
+{
+  "cells": 384,
+  "sections": 6,
+  "inventory_excess": 0,
+  "html_reconstruction": "matches placements, preview, parts, and comparison"
+}
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/mosaic-parts convert /tmp/mosaic-isolated-install-oisdvzbf/input/source.png --inventory /tmp/mosaic-isolated-install-oisdvzbf/input/inventory.json --width 24 --height 16 --output /tmp/mosaic-isolated-install-oisdvzbf/second
+Wrote 384 tiles to /tmp/mosaic-isolated-install-oisdvzbf/second; squared RGB error 3055128; unconstrained excess 73 tiles
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/python /var/lib/dailybuilder/projects/mosaic-parts-planner/scripts/check_bundle.py /tmp/mosaic-isolated-install-oisdvzbf/second /tmp/mosaic-isolated-install-oisdvzbf/input/inventory.json
+{
+  "cells": 384,
+  "sections": 6,
+  "inventory_excess": 0,
+  "html_reconstruction": "matches placements, preview, parts, and comparison"
+}
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/mosaic-parts convert /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/source.png --inventory /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/inventory.json --width 6 --height 4 --output /tmp/mosaic-isolated-install-oisdvzbf/small-grid
+Wrote 24 tiles to /tmp/mosaic-isolated-install-oisdvzbf/small-grid; squared RGB error 25918; unconstrained excess 0 tiles
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/mosaic-parts pack /tmp/mosaic-isolated-install-oisdvzbf/small-grid/placements.json --inventory /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/pieces.json --output /tmp/mosaic-isolated-install-oisdvzbf/packed-first --section-size 3
+Packing optimal; termination exhausted; pieces 10; nodes 305; results in /tmp/mosaic-isolated-install-oisdvzbf/packed-first
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/python /var/lib/dailybuilder/projects/mosaic-parts-planner/scripts/check_packing.py /tmp/mosaic-isolated-install-oisdvzbf/packed-first /tmp/mosaic-isolated-install-oisdvzbf/small-grid/placements.json /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/pieces.json
+{
+  "cells": 24,
+  "pieces": 10,
+  "sections": 4,
+  "crossing_pieces": 3,
+  "reconstruction": "JSON, visible HTML, CSV, preview, original grid and inventory agree"
+}
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/mosaic-parts pack /tmp/mosaic-isolated-install-oisdvzbf/small-grid/placements.json --inventory /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/pieces.json --output /tmp/mosaic-isolated-install-oisdvzbf/packed-second --section-size 3
+Packing optimal; termination exhausted; pieces 10; nodes 305; results in /tmp/mosaic-isolated-install-oisdvzbf/packed-second
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/python /var/lib/dailybuilder/projects/mosaic-parts-planner/scripts/check_packing.py /tmp/mosaic-isolated-install-oisdvzbf/packed-second /tmp/mosaic-isolated-install-oisdvzbf/small-grid/placements.json /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/pieces.json
+{
+  "cells": 24,
+  "pieces": 10,
+  "sections": 4,
+  "crossing_pieces": 3,
+  "reconstruction": "JSON, visible HTML, CSV, preview, original grid and inventory agree"
+}
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/python -c import json,sys; from pathlib import Path; from mosaic_parts.joint_export import load_problem; p,_=load_problem(Path(sys.argv[1]),Path(sys.argv[2]),6,4,200000); Path(sys.argv[3]).write_text(json.dumps(p)) /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/source.png /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/joint-palette.json /tmp/mosaic-isolated-install-oisdvzbf/joint-problem.json
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/mosaic-parts optimize /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/source.png --palette /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/joint-palette.json --inventory /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/pieces.json --width 6 --height 4 --error-budget 200000 --section-size 3 --output /tmp/mosaic-isolated-install-oisdvzbf/joint-first
+Joint optimal; termination exhausted; pieces 6; error 108783/200000; results in /tmp/mosaic-isolated-install-oisdvzbf/joint-first
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/python /var/lib/dailybuilder/projects/mosaic-parts-planner/scripts/check_joint.py /tmp/mosaic-isolated-install-oisdvzbf/joint-first /tmp/mosaic-isolated-install-oisdvzbf/joint-problem.json /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/pieces.json
+{
+  "piece_count": 6,
+  "image_error": 108783,
+  "recolored_cells": [
+    5,
+    11,
+    13,
+    14,
+    15
+  ]
+}
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/mosaic-parts optimize /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/source.png --palette /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/joint-palette.json --inventory /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/pieces.json --width 6 --height 4 --error-budget 200000 --section-size 3 --output /tmp/mosaic-isolated-install-oisdvzbf/joint-second
+Joint optimal; termination exhausted; pieces 6; error 108783/200000; results in /tmp/mosaic-isolated-install-oisdvzbf/joint-second
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/python /var/lib/dailybuilder/projects/mosaic-parts-planner/scripts/check_joint.py /tmp/mosaic-isolated-install-oisdvzbf/joint-second /tmp/mosaic-isolated-install-oisdvzbf/joint-problem.json /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/pieces.json
+{
+  "piece_count": 6,
+  "image_error": 108783,
+  "recolored_cells": [
+    5,
+    11,
+    13,
+    14,
+    15
+  ]
+}
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/mosaic-parts explore /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/source.png --palette /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/joint-palette.json --inventory /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/pieces.json --width 6 --height 4 --budgets 0 50000 100000 200000 400000 --section-size 3 --output /tmp/mosaic-isolated-install-oisdvzbf/explorer
+Compared 5 budgets; 3 validated plans in /tmp/mosaic-isolated-install-oisdvzbf/explorer
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/mosaic-parts export-plan /tmp/mosaic-isolated-install-oisdvzbf/explorer/comparison.json --plan plan-3 --output /tmp/mosaic-isolated-install-oisdvzbf/selected
+Exported plan-3 to /tmp/mosaic-isolated-install-oisdvzbf/selected without optimization
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/python /var/lib/dailybuilder/projects/mosaic-parts-planner/scripts/check_joint.py /tmp/mosaic-isolated-install-oisdvzbf/selected /tmp/mosaic-isolated-install-oisdvzbf/selected-problem.json /var/lib/dailybuilder/projects/mosaic-parts-planner/examples/pieces.json
+{
+  "piece_count": 6,
+  "image_error": 108783,
+  "recolored_cells": [
+    5,
+    11,
+    13,
+    14,
+    15
+  ]
+}
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/python -m unittest discover -s /var/lib/dailybuilder/projects/mosaic-parts-planner/tests -v
+test_checker_detects_visible_cell_and_total_tampering (test_bundle.BundleTests.test_checker_detects_visible_cell_and_total_tampering) ... ok
+test_cli_invalid_inputs_actionable_without_traceback (test_bundle.BundleTests.test_cli_invalid_inputs_actionable_without_traceback) ... ok
+test_cli_reproducible_across_hash_seeds (test_bundle.BundleTests.test_cli_reproducible_across_hash_seeds) ... ok
+test_escaped_names_and_spreadsheet_formulas (test_bundle.BundleTests.test_escaped_names_and_spreadsheet_formulas) ... ok
+test_existing_output_and_atomic_failure (test_bundle.BundleTests.test_existing_output_and_atomic_failure) ... ok
+test_full_example_independent_reconstruction_and_reproducibility (test_bundle.BundleTests.test_full_example_independent_reconstruction_and_reproducibility) ... ok
+test_partial_sections_and_all_zero_stock_colors (test_bundle.BundleTests.test_partial_sections_and_all_zero_stock_colors) ... ok
+test_single_cell_and_long_skinny_grids (test_bundle.BundleTests.test_single_cell_and_long_skinny_grids) ... ok
+test_248_seeded_instances_multiple_budgets_against_exhaustive (test_explorer.ExplorerTests.test_248_seeded_instances_multiple_budgets_against_exhaustive) ... ok
+test_bad_inputs_and_solver_results (test_explorer.ExplorerTests.test_bad_inputs_and_solver_results) ... ok
+test_boundary_dedup_order_and_ties (test_explorer.ExplorerTests.test_boundary_dedup_order_and_ties) ... ok
+test_interruptions (test_explorer.ExplorerTests.test_interruptions) ... ok
+test_saved_plan_and_atomic_failure (test_explorer.ExplorerTests.test_saved_plan_and_atomic_failure) ... ok
+test_tampering_rejected (test_explorer.ExplorerTests.test_tampering_rejected) ... ok
+test_all_exif_orientations (test_inputs.InputTests.test_all_exif_orientations) ... ok
+test_extreme_contain_aspect (test_inputs.InputTests.test_extreme_contain_aspect) ... ok
+test_fit_modes (test_inputs.InputTests.test_fit_modes) ... ok
+test_grid_limits (test_inputs.InputTests.test_grid_limits) ... ok
+test_image_resource_limits (test_inputs.InputTests.test_image_resource_limits) ... ok
+test_invalid_inventory (test_inputs.InputTests.test_invalid_inventory) ... ok
+test_invalid_json_duplicate_keys_and_size (test_inputs.InputTests.test_invalid_json_duplicate_keys_and_size) ... ok
+test_jpeg_and_ignored_icc (test_inputs.InputTests.test_jpeg_and_ignored_icc) ... ok
+test_palette_transparency_and_grayscale (test_inputs.InputTests.test_palette_transparency_and_grayscale) ... ok
+test_reject_formats_animation_modes_and_corruption (test_inputs.InputTests.test_reject_formats_animation_modes_and_corruption) ... ok
+test_transparency_composited_before_resize (test_inputs.InputTests.test_transparency_composited_before_resize) ... ok
+test_valid_inventory (test_inputs.InputTests.test_valid_inventory) ... ok
+test_248_exhaustive_cases (test_joint.JointTests.test_248_exhaustive_cases) ... ok
+test_atomic_export_and_metadata_tampering (test_joint.JointTests.test_atomic_export_and_metadata_tampering) ... ok
+test_backtracking_finds_incumbent_after_both_greedies_fail (test_joint.JointTests.test_backtracking_finds_incumbent_after_both_greedies_fail) ... ok
+test_boundary_and_rotation (test_joint.JointTests.test_boundary_and_rotation) ... ok
+test_bounded_search_statuses (test_joint.JointTests.test_bounded_search_statuses) ... ok
+test_cli_sample_and_repeatability (test_joint.JointTests.test_cli_sample_and_repeatability) ... /tmp/mosaic-isolated-install-oisdvzbf/venv/lib/python3.12/site-packages/mosaic_parts/joint_export.py:31: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  problem['pixels'] = [list(p) for p in sampled.getdata()]
+/tmp/mosaic-isolated-install-oisdvzbf/venv/lib/python3.12/site-packages/mosaic_parts/joint_export.py:31: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  problem['pixels'] = [list(p) for p in sampled.getdata()]
+ok
+test_clock_termination_and_failure (test_joint.JointTests.test_clock_termination_and_failure) ... ok
+test_independent_validator_rejects_corruption (test_joint.JointTests.test_independent_validator_rejects_corruption) ... ok
+test_malformed_and_resource_bounds (test_joint.JointTests.test_malformed_and_resource_bounds) ... ok
+test_maximum_cells_colors_and_candidates (test_joint.JointTests.test_maximum_cells_colors_and_candidates) ... ok
+test_visible_bundle_checker_detects_tampering (test_joint.JointTests.test_visible_bundle_checker_detects_tampering) ... ok
+test_308_cases_against_independent_exhaustive_oracle (test_packing.PackingTests.test_308_cases_against_independent_exhaustive_oracle) ... ok
+test_atomic_failure_invalid_solver_and_no_solution_artifacts (test_packing.PackingTests.test_atomic_failure_invalid_solver_and_no_solution_artifacts) ... ok
+test_backtracking_finds_and_retains_incumbent_after_greedy_failure (test_packing.PackingTests.test_backtracking_finds_and_retains_incumbent_after_greedy_failure) ... ok
+test_cli_status_codes_and_repeatable_artifacts (test_packing.PackingTests.test_cli_status_codes_and_repeatable_artifacts) ... ok
+test_clock_deadline_in_preprocessing_and_after_greedy (test_packing.PackingTests.test_clock_deadline_in_preprocessing_and_after_greedy) ... ok
+test_complete_bundle_crossings_and_tampering (test_packing.PackingTests.test_complete_bundle_crossings_and_tampering) ... ok
+test_limits_with_and_without_incumbents (test_packing.PackingTests.test_limits_with_and_without_incumbents) ... ok
+test_malformed_grid_inventory_and_limits (test_packing.PackingTests.test_malformed_grid_inventory_and_limits) ... ok
+test_max_cells_skinny_and_escaped_color_name (test_packing.PackingTests.test_max_cells_skinny_and_escaped_color_name) ... ok
+test_rotation_is_shared_inventory_and_explicit (test_packing.PackingTests.test_rotation_is_shared_inventory_and_explicit) ... ok
+test_validator_rejects_corruption (test_packing.PackingTests.test_validator_rejects_corruption) ... ok
+test_duplicate_rgb_names_and_zero_capacity (test_solver.SolverTests.test_duplicate_rgb_names_and_zero_capacity) ... ok
+test_exhaustive_binary_colors_all_small_inputs (test_solver.SolverTests.test_exhaustive_binary_colors_all_small_inputs) ... ok
+test_insufficient (test_solver.SolverTests.test_insufficient) ... ok
+test_reassignment_beats_greedy (test_solver.SolverTests.test_reassignment_beats_greedy) ... ok
+test_seeded_three_color_cases (test_solver.SolverTests.test_seeded_three_color_cases) ... ok
+
+----------------------------------------------------------------------
+Ran 53 tests in 11.142s
+
+OK
++ /tmp/mosaic-isolated-install-oisdvzbf/venv/bin/python /var/lib/dailybuilder/projects/mosaic-parts-planner/scripts/compare.py --check /var/lib/dailybuilder/projects/mosaic-parts-planner/experiments/results.json
+Reproduced 4 saved comparison cases exactly
+{
+  "isolated_install": "passed",
+  "offline_example": "passed",
+  "all_artifacts_identical": true,
+  "sha256": {
+    "comparison.json": "74520e1ad2d1dc1d64e0c9975df2cb508d1f2c355c4e72483d79e9643b94a6af",
+    "instructions.html": "adab4919382ef95e8fa104787699e2adaeec7cb6b32c49d11467402f75e2f0fe",
+    "parts.csv": "dfd26e372c25d73448249d8d2da01a2251523331059dfaec0bd38e0f56202717",
+    "placements.json": "4eb618c2299bcda1d7ee0367f21e6f1c07d2a106bc4e7b0bfb1b9935b4df31c1",
+    "preview.png": "8cefc7c1ea78931eccbd1d1213e6de728a579a5a16b2f8c58623234228343b60",
+    "target.png": "e0c41dd28fcc51a0423f0b5f618eab00790d2b86e5bf461cef02696be735d57f"
+  },
+  "packed_sha256": {
+    "instructions.html": "7dcb0bc2d718e47e815a666ae1926064072f95819f96dd559b6e70256ad5aedb",
+    "parts.csv": "7cea6a27319b5fca9404dc24b4b3026ee857d90d8cca5961ce7d810f6d9faa25",
+    "placements.json": "3c4aaeb507ed92a7e292f0005dc40e1e7174a9077ded3ac3d177ee451795a293",
+    "preview.png": "a7d6322ab5085a7eb8ac8dca497fc9846f1c4ce56b96b7cc436e6836560dff5b",
+    "solve.json": "bd46ee31d8cf4d5f3f40d1bd84cbfd8c8ed234a38fd5af815be6f82e271f1941"
+  },
+  "joint_sha256": {
+    "instructions.html": "e43de95357045fdfb1be30783797e46b7bd2f98e8bfe3e68e968bb78f583592e",
+    "parts.csv": "a84be84e98b0f11c29b3a61de025150e279e36b5a82f654540864e9242a1372e",
+    "placements.json": "3250f182bd651bc5cfac7d538da37b0d8a1662812e697dd407bf656bc4b8d3bd",
+    "preview.png": "bcf687b6dc70a4a4d97fa7fb83ec2ed6a15957a90200677d6e78965b2ae34635",
+    "solve.json": "1c0933d4a61dcacf0cf83a24fe9ff8a140673de0d42df47ab66feb55011d174a"
+  }
+}
++ /var/lib/dailybuilder/projects/mosaic-parts-planner/.venv/bin/python scripts/compare_packing.py --check experiments/packing-results.json
+Rechecked 308 exhaustive cases and 17 comparisons; timings remeasured, not equality-tested
++ /var/lib/dailybuilder/projects/mosaic-parts-planner/.venv/bin/python scripts/compare_joint.py --check experiments/joint-results.json
+boundary_below joint: optimal, 2 pieces
+boundary_below sequential: optimal, 2 pieces
+boundary_exact joint: optimal, 1 pieces
+boundary_exact sequential: optimal, 2 pieces
+rotation_required joint: optimal, 1 pieces
+rotation_required sequential: optimal, 1 pieces
+rotation_forbidden joint: infeasible, None pieces
+rotation_forbidden sequential: infeasible, None pieces
+scarce_nearest_color joint: optimal, 1 pieces
+scarce_nearest_color sequential: optimal, 1 pieces
+tied_colors_and_tilings joint: optimal, 2 pieces
+tied_colors_and_tilings sequential: optimal, 2 pieces
+geometry_impossible joint: infeasible, None pieces
+geometry_impossible sequential: infeasible, None pieces
+empty_inventory joint: infeasible, None pieces
+empty_inventory sequential: infeasible, None pieces
+4x3-blocks joint: optimal, 4 pieces
+4x3-blocks sequential: optimal, 4 pieces
+4x3-checker joint: optimal, 7 pieces
+4x3-checker sequential: optimal, 12 pieces
+4x3-noise joint: optimal, 6 pieces
+4x3-noise sequential: optimal, 8 pieces
+4x4-blocks joint: optimal, 4 pieces
+4x4-blocks sequential: optimal, 4 pieces
+4x4-checker joint: feasible, 10 pieces
+4x4-checker sequential: optimal, 16 pieces
+4x4-noise joint: optimal, 5 pieces
+4x4-noise sequential: optimal, 8 pieces
+6x4-blocks joint: optimal, 6 pieces
+6x4-blocks sequential: optimal, 6 pieces
+6x4-checker joint: feasible, 14 pieces
+6x4-checker sequential: optimal, 24 pieces
+6x4-noise joint: optimal, 9 pieces
+6x4-noise sequential: optimal, 13 pieces
+8x8-blocks joint: optimal, 16 pieces
+8x8-blocks sequential: optimal, 16 pieces
+8x8-checker joint: feasible, 44 pieces
+8x8-checker sequential: optimal, 64 pieces
+8x8-noise joint: feasible, 26 pieces
+8x8-noise sequential: optimal, 39 pieces
+eight-colors-64-cells joint: optimal, 16 pieces
+eight-colors-64-cells sequential: optimal, 32 pieces
+no-nodes-with-incumbent joint: feasible, 1 pieces
+no-nodes-with-incumbent sequential: feasible, 2 pieces
+no-time-without-incumbent joint: unknown, None pieces
+no-time-without-incumbent sequential: unknown, None pieces
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-09-25T21:44:42.181839+00:00",
+  "suite_sha256": "1d5d46c81acf04e6bb54c3f8277d22949ea939e6c8e179d0396bab1d119e0ed2",
+  "versions": {
+    "planner": "0.2.0",
+    "python": "3.12.3",
+    "pillow": "12.1.1"
+  },
+  "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+  "measurement": "One fresh process per row. Wall includes algorithm and validation, excludes process startup. Linux ru_maxrss KiB includes imports. Single measurements, no speed significance claim.",
+  "baseline_status_scope": "Sequential optimal/infeasible refers to its fixed-color grid, not all possible recolorings.",
+  "results": [
+    {
+      "case": "boundary_below",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 2,
+        "candidates_considered": 6,
+        "piece_count": 2,
+        "image_error": 0,
+        "lower_bound": 1
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0007172280456870794,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "boundary_below",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 2,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0008244700729846954,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "boundary_exact",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 6,
+        "piece_count": 1,
+        "image_error": 300,
+        "lower_bound": 1
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0008831880986690521,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "boundary_exact",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 2,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.000870447838678956,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "rotation_required",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 1,
+        "piece_count": 1,
+        "image_error": 300,
+        "lower_bound": 1
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0005462791305035353,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "rotation_required",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 1,
+        "nodes": 1,
+        "image_error": 300
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.000801019137725234,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "rotation_forbidden",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "infeasible",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 0,
+        "piece_count": null,
+        "image_error": null,
+        "lower_bound": 1
+      },
+      "feasible": false,
+      "elapsed_seconds": 0.00025472790002822876,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "rotation_forbidden",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "infeasible",
+        "termination": "exhausted",
+        "piece_count": null,
+        "nodes": 1,
+        "image_error": 300
+      },
+      "feasible": false,
+      "elapsed_seconds": 0.0004176259972155094,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "scarce_nearest_color",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 1,
+        "piece_count": 1,
+        "image_error": 300,
+        "lower_bound": 1
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0005277369637042284,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "scarce_nearest_color",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 1,
+        "nodes": 1,
+        "image_error": 300
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0008509650360792875,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "tied_colors_and_tilings",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 8,
+        "piece_count": 2,
+        "image_error": 300,
+        "lower_bound": 2
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0009239979553967714,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "tied_colors_and_tilings",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 2,
+        "nodes": 1,
+        "image_error": 300
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.000814161030575633,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "geometry_impossible",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "infeasible",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 0,
+        "piece_count": null,
+        "image_error": null,
+        "lower_bound": 1
+      },
+      "feasible": false,
+      "elapsed_seconds": 0.00025724503211677074,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "geometry_impossible",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "infeasible",
+        "termination": "exhausted",
+        "piece_count": null,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": false,
+      "elapsed_seconds": 0.00040148990228772163,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "empty_inventory",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "infeasible",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 0,
+        "piece_count": null,
+        "image_error": null,
+        "lower_bound": null
+      },
+      "feasible": false,
+      "elapsed_seconds": 0.00021835113875567913,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "empty_inventory",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "infeasible",
+        "termination": "insufficient_color_area",
+        "piece_count": null,
+        "image_error": null
+      },
+      "feasible": false,
+      "elapsed_seconds": 5.969894118607044e-05,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x3-blocks",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 46,
+        "candidates_considered": 105,
+        "piece_count": 4,
+        "image_error": 0,
+        "lower_bound": 3
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.002365486929193139,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x3-blocks",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 4,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0015993188135325909,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x3-checker",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1825,
+        "candidates_considered": 105,
+        "piece_count": 7,
+        "image_error": 160275,
+        "lower_bound": 3
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.009913763031363487,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x3-checker",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 12,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0008773980662226677,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x3-noise",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1774,
+        "candidates_considered": 105,
+        "piece_count": 6,
+        "image_error": 126675,
+        "lower_bound": 3
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.008243455085903406,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x3-noise",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 8,
+        "nodes": 5,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0013628019951283932,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x4-blocks",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 147,
+        "piece_count": 4,
+        "image_error": 0,
+        "lower_bound": 4
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.002374602947384119,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x4-blocks",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 4,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.001718987012282014,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x4-checker",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "feasible",
+        "termination": "node_limit",
+        "nodes": 20000,
+        "candidates_considered": 147,
+        "piece_count": 10,
+        "image_error": 177075,
+        "lower_bound": 4
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.10372110083699226,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x4-checker",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 16,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0016604650299996138,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x4-noise",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 33,
+        "candidates_considered": 147,
+        "piece_count": 5,
+        "image_error": 236550,
+        "lower_bound": 4
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.002755700144916773,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x4-noise",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 8,
+        "nodes": 76,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.00251965899951756,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "6x4-blocks",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 231,
+        "piece_count": 6,
+        "image_error": 0,
+        "lower_bound": 6
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.003698749002069235,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "6x4-blocks",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 6,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.002676153089851141,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "6x4-checker",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "feasible",
+        "termination": "node_limit",
+        "nodes": 20000,
+        "candidates_considered": 231,
+        "piece_count": 14,
+        "image_error": 337350,
+        "lower_bound": 6
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.10115578584372997,
+      "peak_process_rss_kib": 23424
+    },
+    {
+      "case": "6x4-checker",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 24,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0022389800287783146,
+      "peak_process_rss_kib": 23424
+    },
+    {
+      "case": "6x4-noise",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 11256,
+        "candidates_considered": 231,
+        "piece_count": 9,
+        "image_error": 270150,
+        "lower_bound": 6
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.04685835703276098,
+      "peak_process_rss_kib": 23424
+    },
+    {
+      "case": "6x4-noise",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 13,
+        "nodes": 513,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.006280776811763644,
+      "peak_process_rss_kib": 23424
+    },
+    {
+      "case": "8x8-blocks",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 675,
+        "piece_count": 16,
+        "image_error": 0,
+        "lower_bound": 16
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.010226297890767455,
+      "peak_process_rss_kib": 23424
+    },
+    {
+      "case": "8x8-blocks",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 16,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.004315230995416641,
+      "peak_process_rss_kib": 23424
+    },
+    {
+      "case": "8x8-checker",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "feasible",
+        "termination": "node_limit",
+        "nodes": 20000,
+        "candidates_considered": 675,
+        "piece_count": 44,
+        "image_error": 953925,
+        "lower_bound": 16
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.1259481159504503,
+      "peak_process_rss_kib": 23424
+    },
+    {
+      "case": "8x8-checker",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 64,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.00297100399620831,
+      "peak_process_rss_kib": 23424
+    },
+    {
+      "case": "8x8-noise",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "feasible",
+        "termination": "node_limit",
+        "nodes": 20000,
+        "candidates_considered": 675,
+        "piece_count": 26,
+        "image_error": 953925,
+        "lower_bound": 16
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.11332594393752515,
+      "peak_process_rss_kib": 23424
+    },
+    {
+      "case": "8x8-noise",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 39,
+        "nodes": 14313,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.09577851695939898,
+      "peak_process_rss_kib": 23424
+    },
+    {
+      "case": "eight-colors-64-cells",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 1800,
+        "piece_count": 16,
+        "image_error": 86400,
+        "lower_bound": 16
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.027845139848068357,
+      "peak_process_rss_kib": 23424
+    },
+    {
+      "case": "eight-colors-64-cells",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 32,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.004469656152650714,
+      "peak_process_rss_kib": 23424
+    },
+    {
+      "case": "no-nodes-with-incumbent",
+      "method": "joint",
+      "settings": {
+        "node_limit": 0,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "feasible",
+        "termination": "node_limit",
+        "nodes": 0,
+        "candidates_considered": 6,
+        "piece_count": 1,
+        "image_error": 300,
+        "lower_bound": 1
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0007788590155541897,
+      "peak_process_rss_kib": 23424
+    },
+    {
+      "case": "no-nodes-with-incumbent",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 0,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "feasible",
+        "termination": "node_limit",
+        "piece_count": 2,
+        "nodes": 0,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0008611639495939016,
+      "peak_process_rss_kib": 23424
+    },
+    {
+      "case": "no-time-without-incumbent",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 0
+      },
+      "result": {
+        "status": "unknown",
+        "termination": "time_limit",
+        "nodes": 0,
+        "candidates_considered": 0,
+        "piece_count": null,
+        "image_error": null,
+        "lower_bound": 1
+      },
+      "feasible": false,
+      "elapsed_seconds": 0.00018297694623470306,
+      "peak_process_rss_kib": 23424
+    },
+    {
+      "case": "no-time-without-incumbent",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 0
+      },
+      "result": {
+        "status": "unknown",
+        "termination": "time_limit",
+        "piece_count": null,
+        "image_error": null
+      },
+      "feasible": false,
+      "elapsed_seconds": 4.174187779426575e-06,
+      "peak_process_rss_kib": 23424
+    }
+  ]
+}
++ /var/lib/dailybuilder/projects/mosaic-parts-planner/.venv/bin/python scripts/stress.py
+{
+  "seed": 9771,
+  "cells": 1024,
+  "colors": 32,
+  "conversion_seconds": 37.1551694329828,
+  "verification": {
+    "cells": 1024,
+    "sections": 4,
+    "inventory_excess": 0,
+    "html_reconstruction": "matches placements, preview, parts, and comparison"
+  },
+  "constrained": {
+    "total_squared_rgb_error": 5295766,
+    "mean_squared_rgb_error_per_channel": 1723.8821614583333,
+    "counts": [
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32
+    ],
+    "excess_by_color": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "excess_tiles": 0,
+    "colors_over_inventory": 0
+  },
+  "nearest_unconstrained": {
+    "total_squared_rgb_error": 4097422,
+    "mean_squared_rgb_error_per_channel": 1333.7962239583333,
+    "counts": [
+      19,
+      43,
+      12,
+      20,
+      10,
+      12,
+      36,
+      15,
+      76,
+      25,
+      5,
+      30,
+      21,
+      11,
+      29,
+      59,
+      45,
+      28,
+      91,
+      16,
+      13,
+      53,
+      16,
+      45,
+      62,
+      31,
+      17,
+      26,
+      22,
+      30,
+      50,
+      56
+    ],
+    "excess_by_color": [
+      0,
+      11,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      44,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      27,
+      13,
+      0,
+      59,
+      0,
+      0,
+      21,
+      0,
+      13,
+      30,
+      0,
+      0,
+      0,
+      0,
+      0,
+      18,
+      24
+    ],
+    "excess_tiles": 264,
+    "colors_over_inventory": 11
+  }
+}
++ /var/lib/dailybuilder/projects/mosaic-parts-planner/.venv/bin/python scripts/check_joint_print.py --check experiments/joint-print.json
+{
+  "schema_version": 1,
+  "chromium": "153.0.8010.12",
+  "network": "offline browser context and HTTP(S) routes aborted",
+  "results": [
+    {
+      "case": "sample",
+      "paper": "A4",
+      "pages": 8,
+      "instruction_sheets": 6,
+      "all_sheets_intact": true,
+      "external_requests": 0,
+      "browser_errors": 0,
+      "checked": {
+        "piece_count": 6,
+        "image_error": 108783,
+        "recolored_cells": [
+          5,
+          11,
+          13,
+          14,
+          15
+        ]
+      }
+    },
+    {
+      "case": "sample",
+      "paper": "Letter",
+      "pages": 8,
+      "instruction_sheets": 6,
+      "all_sheets_intact": true,
+      "external_requests": 0,
+      "browser_errors": 0,
+      "checked": {
+        "piece_count": 6,
+        "image_error": 108783,
+        "recolored_cells": [
+          5,
+          11,
+          13,
+          14,
+          15
+        ]
+      }
+    },
+    {
+      "case": "max_cells_colors_recoloring",
+      "paper": "A4",
+      "pages": 21,
+      "instruction_sheets": 18,
+      "all_sheets_intact": true,
+      "external_requests": 0,
+      "browser_errors": 0,
+      "checked": {
+        "piece_count": 16,
+        "image_error": 86400,
+        "recolored_cells": [
+          1,
+          3,
+          5,
+          7,
+          9,
+          11,
+          13,
+          15,
+          17,
+          19,
+          21,
+          23,
+          25,
+          27,
+          29,
+          31,
+          33,
+          35,
+          37,
+          39,
+          41,
+          43,
+          45,
+          47,
+          49,
+          51,
+          53,
+          55,
+          57,
+          59,
+          61,
+          63
+        ]
+      }
+    },
+    {
+      "case": "max_cells_colors_recoloring",
+      "paper": "Letter",
+      "pages": 21,
+      "instruction_sheets": 18,
+      "all_sheets_intact": true,
+      "external_requests": 0,
+      "browser_errors": 0,
+      "checked": {
+        "piece_count": 16,
+        "image_error": 86400,
+        "recolored_cells": [
+          1,
+          3,
+          5,
+          7,
+          9,
+          11,
+          13,
+          15,
+          17,
+          19,
+          21,
+          23,
+          25,
+          27,
+          29,
+          31,
+          33,
+          35,
+          37,
+          39,
+          41,
+          43,
+          45,
+          47,
+          49,
+          51,
+          53,
+          55,
+          57,
+          59,
+          61,
+          63
+        ]
+      }
+    },
+    {
+      "case": "skinny",
+      "paper": "A4",
+      "pages": 18,
+      "instruction_sheets": 16,
+      "all_sheets_intact": true,
+      "external_requests": 0,
+      "browser_errors": 0,
+      "checked": {
+        "piece_count": 32,
+        "image_error": 0,
+        "recolored_cells": []
+      }
+    },
+    {
+      "case": "skinny",
+      "paper": "Letter",
+      "pages": 18,
+      "instruction_sheets": 16,
+      "all_sheets_intact": true,
+      "external_requests": 0,
+      "browser_errors": 0,
+      "checked": {
+        "piece_count": 32,
+        "image_error": 0,
+        "recolored_cells": []
+      }
+    }
+  ],
+  "limitation": "No physical printing or assembly validation."
+}
++ /var/lib/dailybuilder/projects/mosaic-parts-planner/.venv/bin/python scripts/check_packing_print.py
+{
+  "schema_version": 1,
+  "chromium": "153.0.8010.12",
+  "results": [
+    {
+      "case": "image_example",
+      "paper": "A4",
+      "pages": 10,
+      "instruction_sheets": 8,
+      "all_sheets_intact": true,
+      "browser_errors": 0,
+      "external_requests": 0,
+      "independent_check": {
+        "cells": 24,
+        "pieces": 10,
+        "sections": 4,
+        "crossing_pieces": 3,
+        "reconstruction": "JSON, visible HTML, CSV, preview, original grid and inventory agree"
+      }
+    },
+    {
+      "case": "image_example",
+      "paper": "Letter",
+      "pages": 10,
+      "instruction_sheets": 8,
+      "all_sheets_intact": true,
+      "browser_errors": 0,
+      "external_requests": 0,
+      "independent_check": {
+        "cells": 24,
+        "pieces": 10,
+        "sections": 4,
+        "crossing_pieces": 3,
+        "reconstruction": "JSON, visible HTML, CSV, preview, original grid and inventory agree"
+      }
+    },
+    {
+      "case": "cross_four_sections",
+      "paper": "A4",
+      "pages": 6,
+      "instruction_sheets": 5,
+      "all_sheets_intact": true,
+      "browser_errors": 0,
+      "external_requests": 0,
+      "independent_check": {
+        "cells": 16,
+        "pieces": 4,
+        "sections": 4,
+        "crossing_pieces": 3,
+        "reconstruction": "JSON, visible HTML, CSV, preview, original grid and inventory agree"
+      }
+    },
+    {
+      "case": "cross_four_sections",
+      "paper": "Letter",
+      "pages": 6,
+      "instruction_sheets": 5,
+      "all_sheets_intact": true,
+      "browser_errors": 0,
+      "external_requests": 0,
+      "independent_check": {
+        "cells": 16,
+        "pieces": 4,
+        "sections": 4,
+        "crossing_pieces": 3,
+        "reconstruction": "JSON, visible HTML, CSV, preview, original grid and inventory agree"
+      }
+    },
+    {
+      "case": "dense_256_cells",
+      "paper": "A4",
+      "pages": 20,
+      "instruction_sheets": 16,
+      "all_sheets_intact": true,
+      "browser_errors": 0,
+      "external_requests": 0,
+      "independent_check": {
+        "cells": 256,
+        "pieces": 256,
+        "sections": 4,
+        "crossing_pieces": 0,
+        "reconstruction": "JSON, visible HTML, CSV, preview, original grid and inventory agree"
+      }
+    },
+    {
+      "case": "dense_256_cells",
+      "paper": "Letter",
+      "pages": 21,
+      "instruction_sheets": 16,
+      "all_sheets_intact": true,
+      "browser_errors": 0,
+      "external_requests": 0,
+      "independent_check": {
+        "cells": 256,
+        "pieces": 256,
+        "sections": 4,
+        "crossing_pieces": 0,
+        "reconstruction": "JSON, visible HTML, CSV, preview, original grid and inventory agree"
+      }
+    }
+  ],
+  "limitation": "Browser rendering/PDF checks; no physical printing or human assembly study."
+}
++ /var/lib/dailybuilder/projects/mosaic-parts-planner/.venv/bin/python scripts/check_print.py
+[
+  {
+    "case": "example",
+    "paper": "A4",
+    "pages": 7,
+    "sections": 6,
+    "section_totals_on_same_page": true,
+    "external_requests": 0,
+    "browser_errors": 0
+  },
+  {
+    "case": "example",
+    "paper": "Letter",
+    "pages": 7,
+    "sections": 6,
+    "section_totals_on_same_page": true,
+    "external_requests": 0,
+    "browser_errors": 0
+  },
+  {
+    "case": "dense",
+    "paper": "A4",
+    "pages": 3,
+    "sections": 1,
+    "section_totals_on_same_page": true,
+    "external_requests": 0,
+    "browser_errors": 0
+  },
+  {
+    "case": "dense",
+    "paper": "Letter",
+    "pages": 3,
+    "sections": 1,
+    "section_totals_on_same_page": true,
+    "external_requests": 0,
+    "browser_errors": 0
+  }
+]
+Joint milestone verification passed; all subprocess checks completed.
++ /var/lib/dailybuilder/projects/mosaic-parts-planner/.venv/bin/python scripts/compare_explorer.py --check experiments/explorer-results.json
+boundary_below: 2 plans, 0.056s
+boundary_exact: 2 plans, 0.061s
+rotation_required: 1 plans, 0.042s
+rotation_forbidden: 0 plans, 0.004s
+scarce_nearest_color: 1 plans, 0.042s
+tied_colors_and_tilings: 1 plans, 0.042s
+geometry_impossible: 0 plans, 0.004s
+empty_inventory: 0 plans, 0.003s
+4x3-blocks: 1 plans, 0.075s
+4x4-checker: 3 plans, 0.329s
+6x4-noise: 3 plans, 0.234s
+8x8-noise: 3 plans, 0.480s
+eight-colors-64-cells: 2 plans, 0.379s
+zero-time: 0 plans, 0.004s
+zero-nodes: 0 plans, 0.004s
+incumbent-only: 2 plans, 0.055s
+Validated 16 frozen explorer benchmarks
++ /var/lib/dailybuilder/projects/mosaic-parts-planner/.venv/bin/python scripts/check_explorer_browser.py
+{
+  "network_requests": [],
+  "javascript_errors": [],
+  "checked_downloads": [
+    {
+      "case": "boundary",
+      "plan": "plan-1",
+      "piece_count": 1,
+      "image_error": 300,
+      "recolored_cells": [
+        1
+      ]
+    },
+    {
+      "case": "boundary",
+      "plan": "plan-2",
+      "piece_count": 2,
+      "image_error": 0,
+      "recolored_cells": []
+    },
+    {
+      "case": "max",
+      "plan": "plan-1",
+      "piece_count": 16,
+      "image_error": 86400,
+      "recolored_cells": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39,
+        41,
+        43,
+        45,
+        47,
+        49,
+        51,
+        53,
+        55,
+        57,
+        59,
+        61,
+        63
+      ]
+    },
+    {
+      "case": "max",
+      "plan": "plan-2",
+      "piece_count": 32,
+      "image_error": 0,
+      "recolored_cells": []
+    }
+  ],
+  "sample_outcomes": [
+    {
+      "budget": 0,
+      "plan_id": null,
+      "result": {
+        "status": "infeasible",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 308,
+        "piece_count": null,
+        "image_error": null,
+        "lower_bound": 6
+      }
+    },
+    {
+      "budget": 50000,
+      "plan_id": "plan-1",
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 314,
+        "candidates_considered": 308,
+        "piece_count": 8,
+        "image_error": 38553,
+        "lower_bound": 6
+      }
+    },
+    {
+      "budget": 100000,
+      "plan_id": "plan-2",
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 76,
+        "candidates_considered": 308,
+        "piece_count": 7,
+        "image_error": 61053,
+        "lower_bound": 6
+      }
+    },
+    {
+      "budget": 200000,
+      "plan_id": "plan-3",
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 308,
+        "piece_count": 6,
+        "image_error": 108783,
+        "lower_bound": 6
+      }
+    },
+    {
+      "budget": 400000,
+      "plan_id": "plan-3",
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 308,
+        "piece_count": 6,
+        "image_error": 108783,
+        "lower_bound": 6
+      }
+    }
+  ]
+}
+Explorer verification passed, including historical checks, installed CLI, exhaustive enumeration and offline Chromium.

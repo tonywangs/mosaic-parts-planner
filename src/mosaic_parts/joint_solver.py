@@ -27,7 +27,7 @@ class Candidate:
     relaxed_error: int
 
 
-def solve(problem, inventory, *, time_limit=10.0, node_limit=100_000, clock=time.monotonic):
+def solve(problem, inventory, *, time_limit=10.0, node_limit=100_000, clock=time.monotonic, cancelled=lambda: False):
     problem, inventory = inputs(problem, inventory)
     validate_settings(time_limit, node_limit)
     start = clock()
@@ -42,6 +42,8 @@ def solve(problem, inventory, *, time_limit=10.0, node_limit=100_000, clock=time
     chosen = []
 
     def check():
+        if cancelled():
+            raise _Stop('cancelled')
         if clock() - start >= time_limit:
             raise _Stop('time_limit')
 
