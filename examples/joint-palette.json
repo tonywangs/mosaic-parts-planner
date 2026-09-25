@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "colors": [
+    {
+      "id": 1,
+      "name": "Illustrative sky",
+      "rgb": [
+        110,
+        175,
+        220
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Illustrative dark teal",
+      "rgb": [
+        55,
+        85,
+        80
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Illustrative sand",
+      "rgb": [
+        225,
+        200,
+        145
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Illustrative gold",
+      "rgb": [
+        248,
+        208,
+        80
+      ]
+    }
+  ]
+}

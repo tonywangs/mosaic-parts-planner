@@ -1,0 +1,887 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-09-25T21:10:52.253372+00:00",
+  "suite_sha256": "1d5d46c81acf04e6bb54c3f8277d22949ea939e6c8e179d0396bab1d119e0ed2",
+  "versions": {
+    "planner": "0.2.0",
+    "python": "3.12.3",
+    "pillow": "12.1.1"
+  },
+  "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+  "measurement": "One fresh process per row. Wall includes algorithm and validation, excludes process startup. Linux ru_maxrss KiB includes imports. Single measurements, no speed significance claim.",
+  "baseline_status_scope": "Sequential optimal/infeasible refers to its fixed-color grid, not all possible recolorings.",
+  "results": [
+    {
+      "case": "boundary_below",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 2,
+        "candidates_considered": 6,
+        "piece_count": 2,
+        "image_error": 0,
+        "lower_bound": 1
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0007481011562049389,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "boundary_below",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 2,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.000842398963868618,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "boundary_exact",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 6,
+        "piece_count": 1,
+        "image_error": 300,
+        "lower_bound": 1
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0007150198798626661,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "boundary_exact",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 2,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0007741900626569986,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "rotation_required",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 1,
+        "piece_count": 1,
+        "image_error": 300,
+        "lower_bound": 1
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0006981980986893177,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "rotation_required",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 1,
+        "nodes": 1,
+        "image_error": 300
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0007635192014276981,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "rotation_forbidden",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "infeasible",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 0,
+        "piece_count": null,
+        "image_error": null,
+        "lower_bound": 1
+      },
+      "feasible": false,
+      "elapsed_seconds": 0.0002331628929823637,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "rotation_forbidden",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "infeasible",
+        "termination": "exhausted",
+        "piece_count": null,
+        "nodes": 1,
+        "image_error": 300
+      },
+      "feasible": false,
+      "elapsed_seconds": 0.0004828372038900852,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "scarce_nearest_color",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 1,
+        "piece_count": 1,
+        "image_error": 300,
+        "lower_bound": 1
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0007046198006719351,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "scarce_nearest_color",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 1,
+        "nodes": 1,
+        "image_error": 300
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.000748674850910902,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "tied_colors_and_tilings",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 8,
+        "piece_count": 2,
+        "image_error": 300,
+        "lower_bound": 2
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.000867597060278058,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "tied_colors_and_tilings",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 2,
+        "nodes": 1,
+        "image_error": 300
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.000953498063609004,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "geometry_impossible",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "infeasible",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 0,
+        "piece_count": null,
+        "image_error": null,
+        "lower_bound": 1
+      },
+      "feasible": false,
+      "elapsed_seconds": 0.00025715306401252747,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "geometry_impossible",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "infeasible",
+        "termination": "exhausted",
+        "piece_count": null,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": false,
+      "elapsed_seconds": 0.0004380310419946909,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "empty_inventory",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "infeasible",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 0,
+        "piece_count": null,
+        "image_error": null,
+        "lower_bound": null
+      },
+      "feasible": false,
+      "elapsed_seconds": 0.0002541870344430208,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "empty_inventory",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "infeasible",
+        "termination": "insufficient_color_area",
+        "piece_count": null,
+        "image_error": null
+      },
+      "feasible": false,
+      "elapsed_seconds": 6.975303404033184e-05,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x3-blocks",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 46,
+        "candidates_considered": 105,
+        "piece_count": 4,
+        "image_error": 0,
+        "lower_bound": 3
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.002386939013376832,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x3-blocks",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 4,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0016802940517663956,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x3-checker",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1825,
+        "candidates_considered": 105,
+        "piece_count": 7,
+        "image_error": 160275,
+        "lower_bound": 3
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.009561246959492564,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x3-checker",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 12,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0018075418192893267,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x3-noise",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1774,
+        "candidates_considered": 105,
+        "piece_count": 6,
+        "image_error": 126675,
+        "lower_bound": 3
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.009978139074519277,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x3-noise",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 8,
+        "nodes": 5,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0017395091708749533,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x4-blocks",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 147,
+        "piece_count": 4,
+        "image_error": 0,
+        "lower_bound": 4
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0026071900501847267,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x4-blocks",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 4,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0016221210826188326,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x4-checker",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "feasible",
+        "termination": "node_limit",
+        "nodes": 20000,
+        "candidates_considered": 147,
+        "piece_count": 10,
+        "image_error": 177075,
+        "lower_bound": 4
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.2343608990777284,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x4-checker",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 16,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0016802330501377583,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x4-noise",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 33,
+        "candidates_considered": 147,
+        "piece_count": 5,
+        "image_error": 236550,
+        "lower_bound": 4
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.003470567986369133,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "4x4-noise",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 8,
+        "nodes": 76,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0023018349893391132,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "6x4-blocks",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 231,
+        "piece_count": 6,
+        "image_error": 0,
+        "lower_bound": 6
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0028003158513456583,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "6x4-blocks",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 6,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.002338157966732979,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "6x4-checker",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "feasible",
+        "termination": "node_limit",
+        "nodes": 20000,
+        "candidates_considered": 231,
+        "piece_count": 14,
+        "image_error": 337350,
+        "lower_bound": 6
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.18911478598602116,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "6x4-checker",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 24,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0024817991070449352,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "6x4-noise",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 11256,
+        "candidates_considered": 231,
+        "piece_count": 9,
+        "image_error": 270150,
+        "lower_bound": 6
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.09519245917908847,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "6x4-noise",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 13,
+        "nodes": 513,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.004751401953399181,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "8x8-blocks",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 675,
+        "piece_count": 16,
+        "image_error": 0,
+        "lower_bound": 16
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.011538598919287324,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "8x8-blocks",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 16,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.05877651600167155,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "8x8-checker",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "feasible",
+        "termination": "node_limit",
+        "nodes": 20000,
+        "candidates_considered": 675,
+        "piece_count": 44,
+        "image_error": 953925,
+        "lower_bound": 16
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.30052377097308636,
+      "peak_process_rss_kib": 23552
+    },
+    {
+      "case": "8x8-checker",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 64,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.00284852203913033,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "8x8-noise",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "feasible",
+        "termination": "node_limit",
+        "nodes": 20000,
+        "candidates_considered": 675,
+        "piece_count": 26,
+        "image_error": 953925,
+        "lower_bound": 16
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.27061449200846255,
+      "peak_process_rss_kib": 23424
+    },
+    {
+      "case": "8x8-noise",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 39,
+        "nodes": 14313,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.21021415712311864,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "eight-colors-64-cells",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "nodes": 1,
+        "candidates_considered": 1800,
+        "piece_count": 16,
+        "image_error": 86400,
+        "lower_bound": 16
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.07665453292429447,
+      "peak_process_rss_kib": 23552
+    },
+    {
+      "case": "eight-colors-64-cells",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "optimal",
+        "termination": "exhausted",
+        "piece_count": 32,
+        "nodes": 1,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0667830880265683,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "no-nodes-with-incumbent",
+      "method": "joint",
+      "settings": {
+        "node_limit": 0,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "feasible",
+        "termination": "node_limit",
+        "nodes": 0,
+        "candidates_considered": 6,
+        "piece_count": 1,
+        "image_error": 300,
+        "lower_bound": 1
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.0008019760716706514,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "no-nodes-with-incumbent",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 0,
+        "time_limit_seconds": 5.0
+      },
+      "result": {
+        "status": "feasible",
+        "termination": "node_limit",
+        "piece_count": 2,
+        "nodes": 0,
+        "image_error": 0
+      },
+      "feasible": true,
+      "elapsed_seconds": 0.000868974020704627,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "no-time-without-incumbent",
+      "method": "joint",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 0
+      },
+      "result": {
+        "status": "unknown",
+        "termination": "time_limit",
+        "nodes": 0,
+        "candidates_considered": 0,
+        "piece_count": null,
+        "image_error": null,
+        "lower_bound": 1
+      },
+      "feasible": false,
+      "elapsed_seconds": 0.00022699800319969654,
+      "peak_process_rss_kib": 23296
+    },
+    {
+      "case": "no-time-without-incumbent",
+      "method": "sequential",
+      "settings": {
+        "node_limit": 20000,
+        "time_limit_seconds": 0
+      },
+      "result": {
+        "status": "unknown",
+        "termination": "time_limit",
+        "piece_count": null,
+        "image_error": null
+      },
+      "feasible": false,
+      "elapsed_seconds": 4.922039806842804e-06,
+      "peak_process_rss_kib": 23296
+    }
+  ]
+}

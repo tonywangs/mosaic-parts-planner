@@ -71,6 +71,21 @@ def main():
         for path in sorted((work / "packed-first").iterdir()):
             assert path.read_bytes() == (work / "packed-second" / path.name).read_bytes(), path.name
             packed_hashes[path.name] = hashlib.sha256(path.read_bytes()).hexdigest()
+        run([binary, '-c',
+             'import json,sys; from pathlib import Path; from mosaic_parts.joint_export import load_problem; '
+             'p,_=load_problem(Path(sys.argv[1]),Path(sys.argv[2]),6,4,200000); '
+             'Path(sys.argv[3]).write_text(json.dumps(p))',
+             ROOT / 'examples/source.png', ROOT / 'examples/joint-palette.json', work / 'joint-problem.json'], work, env)
+        for name in ('joint-first', 'joint-second'):
+            run([cli, 'optimize', ROOT / 'examples/source.png', '--palette', ROOT / 'examples/joint-palette.json',
+                 '--inventory', ROOT / 'examples/pieces.json', '--width', '6', '--height', '4',
+                 '--error-budget', '200000', '--section-size', '3', '--output', work / name], work, env)
+            run([binary, ROOT / 'scripts/check_joint.py', work / name, work / 'joint-problem.json',
+                 ROOT / 'examples/pieces.json'], work, env)
+        joint_hashes = {}
+        for path in sorted((work / 'joint-first').iterdir()):
+            assert path.read_bytes() == (work / 'joint-second' / path.name).read_bytes(), path.name
+            joint_hashes[path.name] = hashlib.sha256(path.read_bytes()).hexdigest()
         hashes = {}
         for path in sorted((work / "first").iterdir()):
             assert path.read_bytes() == (work / "second" / path.name).read_bytes(), path.name
@@ -78,7 +93,8 @@ def main():
         run([binary, "-m", "unittest", "discover", "-s", ROOT / "tests", "-v"], work, env)
         run([binary, ROOT / "scripts/compare.py", "--check", ROOT / "experiments/results.json"], work, env)
         print(json.dumps({"isolated_install": "passed", "offline_example": "passed",
-                          "all_artifacts_identical": True, "sha256": hashes, "packed_sha256": packed_hashes}, indent=2))
+                          "all_artifacts_identical": True, "sha256": hashes, "packed_sha256": packed_hashes,
+                          "joint_sha256": joint_hashes}, indent=2))
 
 
 if __name__ == "__main__":

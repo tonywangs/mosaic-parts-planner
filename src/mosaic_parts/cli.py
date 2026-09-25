@@ -11,6 +11,7 @@ from .export import convert
 from .model import InputError
 from .packing_export import pack
 from .packing_solver import SolverError
+from .joint_export import optimize
 
 
 def background(value):
@@ -41,11 +42,31 @@ def main(argv=None):
     packing.add_argument("--time-limit", type=float, default=10.0, help="solver wall seconds, 0–300 (default 10)")
     packing.add_argument("--node-limit", type=int, default=100_000, help="DFS nodes, 0–2,000,000")
     packing.add_argument("--section-size", type=int, default=8, help="printed section side, 1–8")
+    joint = commands.add_parser("optimize", help="jointly choose colors and pieces under an image-error budget")
+    joint.add_argument("image", type=Path)
+    joint.add_argument("--palette", type=Path, required=True, help="schema v1 colors with id, name, rgb")
+    joint.add_argument("--inventory", type=Path, required=True)
+    joint.add_argument("--output", type=Path, required=True)
+    joint.add_argument("--width", type=int, required=True)
+    joint.add_argument("--height", type=int, required=True, help="at most 64 cells total")
+    joint.add_argument("--error-budget", type=int, required=True, help="maximum total integer squared-RGB error")
+    joint.add_argument("--fit", choices=("contain", "cover", "stretch"), default="contain")
+    joint.add_argument("--background", type=background, default=(255, 255, 255))
+    joint.add_argument("--time-limit", type=float, default=10.0)
+    joint.add_argument("--node-limit", type=int, default=100_000)
+    joint.add_argument("--section-size", type=int, default=8)
     args = parser.parse_args(argv)
     try:
         if args.command == "example":
             make_example(args.output)
             print(f"Created synthetic inputs in {args.output}")
+        elif args.command == "optimize":
+            result = optimize(args.image, args.palette, args.inventory, args.output, args.width, args.height,
+                              args.error_budget, fit=args.fit, background=args.background,
+                              time_limit=args.time_limit, node_limit=args.node_limit, section_size=args.section_size)
+            print(f"Joint {result['status']}; termination {result['termination']}; pieces {result['piece_count']}; "
+                  f"error {result['image_error']}/{args.error_budget}; results in {args.output}")
+            return {"optimal": 0, "feasible": 0, "infeasible": 3, "unknown": 4}[result['status']]
         elif args.command == "pack":
             result = pack(args.grid, args.inventory, args.output, time_limit=args.time_limit,
                           node_limit=args.node_limit, section_size=args.section_size)

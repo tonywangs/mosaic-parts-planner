@@ -1,6 +1,6 @@
 # Mosaic Parts Planner
 
-Turn a PNG or JPEG into an inventory-constrained color grid, then optionally pack that grid with color-specific 1×1, 1×2, and 2×2 pieces. This offline Python CLI writes previews, placement JSON, parts lists, and self-contained printable instructions. Conversion respects 1×1 color counts; the separate `pack` command minimizes rectangular piece count while preserving every grid cell’s color.
+Turn a PNG or JPEG into a mosaic using the pieces you have. This offline Python CLI writes previews, placement JSON, parts lists, and self-contained printable instructions. `optimize` jointly chooses colors and 1×1, 1×2, and 2×2 pieces to minimize piece count under an explicit numerical image-error budget. The original `convert` and fixed-color `pack` workflows remain available.
 
 ![Synthetic landscape converted with a deliberately scarce dark-teal inventory](examples/preview.png)
 
@@ -28,7 +28,27 @@ python3 -m pip wheel --wheel-dir wheelhouse .
 
 This is a local package; no registry publication is required.
 
-## Rectangular pieces (new in 0.2)
+## Joint color and piece optimization
+
+The [complete joint-planning example](docs/joint.md) produces a **six-piece,
+proven-optimal** plan for 24 sampled cells, with squared-RGB error **108,783**
+under a **200,000** budget. It supports at most 64 cells and eight colors.
+
+```sh
+.venv/bin/mosaic-parts optimize examples/source.png \
+  --palette examples/joint-palette.json --inventory examples/pieces.json \
+  --width 6 --height 4 --error-budget 200000 --section-size 3 \
+  --output example-output/joint
+```
+
+Open `example-output/joint/instructions.html`. The source-versus-plan preview
+marks recolored cells, and the instructions report achieved error, budget and
+optimality status. Every plan is independently reconstructed before export.
+This integer RGB metric is not perceptual fidelity. [Results](experiments/joint.md)
+include 248 exhaustive tiny cases, a frozen 23-case sequential comparison, and
+network-blocked Chromium printing. See [limits and one-command verification](docs/joint.md).
+
+## Fixed-color rectangular pieces
 
 [Follow the complete image → grid → rectangular-plan example](docs/packing.md).
 The documented 24-cell sample packs into **10 pieces, proven optimal**. Packing
@@ -111,7 +131,7 @@ These caps bound graph size and image decoding. Exact optimization is intended f
 
 ## Output contract
 
-All files are deterministic for identical input bytes, inventory order, options, package version, and imaging environment. No timestamps, absolute source paths, or random values are exported. Source bytes are identified by SHA-256. Reordering the inventory can change color numbers and tie outcomes. Cross-version/platform image-decoder equivalence is not guaranteed; the Pillow version is recorded and pinned.
+Conversion files are deterministic for identical input bytes, inventory order, options, package version, and imaging environment. Packing and joint optimization are also deterministic when a wall deadline does not interrupt them; time-limited outcomes can vary. No timestamps, absolute source paths, or random values are exported. Source bytes are identified by SHA-256. Reordering the inventory can change color numbers and tie outcomes. Cross-version/platform image-decoder equivalence is not guaranteed; the Pillow version is recorded and pinned.
 
 | File | Contents |
 | --- | --- |

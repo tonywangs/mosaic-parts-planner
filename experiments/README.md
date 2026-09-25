@@ -43,3 +43,8 @@ all feasible assignments in **1,548** tiny binary-palette input/capacity cases
 and **100** seeded three-color cases, comparing the solver's cost to the true
 minimum. A hand-chosen case requires revising a greedy choice. Tests also cover
 duplicate RGBs, zero-stock colors, and deterministic ties.
+
+The [joint color-and-piece experiments](joint.md) add a separately frozen suite,
+integer-error-budget comparisons with sequential conversion/packing, independent
+exhaustive joint enumeration, and network-blocked browser evidence. The earlier
+conversion and fixed-color packing result files are retained unchanged.
